@@ -1,0 +1,23 @@
+Classify() execution time: 136292.0000 us
+Global accuracy : 
+accuracy1: 0.6490 (649/1000)
+accuracy5: 0.8650 (865/1000)
+**********************  report  **************************
+top1: 0.65
+top5: 0.86
+fps : 7337.19
+
+
+
+
+
+
+
+Classify() execution time: 157020.0000 us
+Global accuracy : 
+accuracy1: 0.6490 (649/1000)
+accuracy5: 0.8650 (865/1000)
+**********************  report  **************************
+top1: 0.65
+top5: 0.86
+fps : 7277.7
