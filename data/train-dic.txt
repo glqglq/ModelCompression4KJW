@@ -1,0 +1,10 @@
+n01440764	0	tench, Tinca tinca	鱼
+n01518878	9	ostrich, Struthio camelus	鸵鸟
+n01806143	84	peacock	孔雀
+n02113624	265	toy poodle	狗
+n02510455	388	giant panda, panda, panda bear, coon bear, Ailuropoda melanoleuca	熊猫
+n02747177	412	ashcan, trash can, garbage can, wastebin, ash bin, ash-bin, ashbin, dustbin, trash barrel, trash bin	垃圾桶
+n02992529	487	cellular telephone, cellular phone, cellphone, cell, mobile phone	手机
+n03483316	589	hand blower, blow dryer, blow drier, hair dryer, hair drier	吹风机
+n04039381	752	racket, racquet	网球拍
+n04146614	779	school bus	校车
