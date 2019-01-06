@@ -38,14 +38,14 @@ class loader:
     def __init__(self, input_file, delimiter, raw_size, processed_size, is_training, batch_size, num_prefetch,
                  num_threads, path_prefix, shuffle=False, inference_only=False):
         self.input_file = input_file
-        self.delimiter = delimiter
+        self.delimiter = delimiter  # 分隔符
         self.raw_size = raw_size
         self.processed_size = processed_size
-        self.is_training = is_training
-        self.batch_size = batch_size
+        self.is_training = is_training  # 是否是训练过程
+        self.batch_size = batch_size  # batch size
         self.num_prefetch = num_prefetch
-        self.num_threads = num_threads
-        self.shuffle = shuffle
+        self.num_threads = num_threads  # 线程数
+        self.shuffle = shuffle  # 是否随机乱序
         self.path_prefix = path_prefix
         self.inference_only = inference_only
 
@@ -59,6 +59,8 @@ class loader:
     """
 
     def _read_label_file(self):
+        # 从词典文件中读取文件名以及图像标签
+        # 格式：图片名，图片标签
         f = open(self.input_file, "r")
         filepaths = []
         # if no label is provided just read input file names
@@ -142,7 +144,7 @@ class loader:
 
         # Create a queue that produces the filenames to read.
         if not self.inference_only:
-            # amke FIFO queue of file paths and their labels
+            # amke FIFO queue of file paths and their labels, 从tensor列表中按顺序或随机抽取一个tensor
             filename_queue = tf.train.slice_input_producer([filenames, labels],
                                                            shuffle=self.shuffle if self.is_training else False)
 

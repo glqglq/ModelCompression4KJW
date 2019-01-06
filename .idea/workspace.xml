@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be0d1298-4a1e-4236-99d8-ade97149d239" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/loaddata/data_loader.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/loaddata/data_loader.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,8 +16,8 @@
       <file leaf-file-name="data_loader.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/loaddata/data_loader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2753">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="176">
+              <caret line="26" column="85" selection-start-line="26" selection-start-column="81" selection-end-line="26" selection-end-column="85" />
               <folding>
                 <element signature="e#23#61#0" expanded="true" />
               </folding>
@@ -28,8 +27,21 @@
       </file>
     </leaf>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>self.shuffle</find>
+      <find>test</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/loaddata/data_loader.py" />
+      </list>
+    </option>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
   <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -40,7 +52,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="677" />
     <option name="y" value="-8" />
     <option name="width" value="631" />
@@ -86,7 +98,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -122,8 +134,8 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/loaddata/data_loader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2753">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
+        <state relative-caret-position="176">
+          <caret line="26" column="85" selection-start-line="26" selection-start-column="81" selection-end-line="26" selection-end-column="85" />
           <folding>
             <element signature="e#23#61#0" expanded="true" />
           </folding>
