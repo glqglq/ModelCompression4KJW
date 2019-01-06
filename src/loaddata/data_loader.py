@@ -14,7 +14,7 @@ import tensorflow as tf
 """
 
 
-class loader:
+class Loader:
     """
      Constructor. it gathers the necessary information to build a data loader pipeline.
      For more details, please read inline comments below.
@@ -234,3 +234,18 @@ class loader:
                                                                self.processed_size[0], self.processed_size[1])
 
         return resized_image
+
+if __name__ == '__main__':
+    input_file = '/luckygong/data/train-dic3.txt'
+    delimiter = '\t'
+
+    raw_size = [224, 224, 3]
+    processed_size = [224, 224, 3]
+
+    num_prefetch = 13000
+    is_training = True
+    batch_size = 32
+    num_threads = 16
+    path_prefix = '/luckygong/data/ImageNet/train-10classes/all'
+    loader = Loader(input_file, delimiter, raw_size, processed_size, is_training, batch_size, num_prefetch,
+                 num_threads, path_prefix, shuffle=False, inference_only=False)
