@@ -249,3 +249,5 @@ if __name__ == '__main__':
     path_prefix = '/luckygong/data/ImageNet/train-10classes/all'
     loader = Loader(input_file, delimiter, raw_size, processed_size, is_training, batch_size, num_prefetch,
                  num_threads, path_prefix, shuffle=False, inference_only=False)
+    loader.load()
+    print('load done')
