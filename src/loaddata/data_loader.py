@@ -61,7 +61,7 @@ class Loader:
     def _read_label_file(self):
         # 从词典文件中读取文件名以及图像标签
         # 格式：图片名，图片标签
-        f = open(self.input_file, "r")
+        f = open(self.input_file, "r", encoding='utf-8')
         filepaths = []
         # if no label is provided just read input file names
         if not self.inference_only:
@@ -246,7 +246,7 @@ if __name__ == '__main__':
     is_training = True
     batch_size = 32
     num_threads = 16
-    path_prefix = '/luckygong/data/ImageNet/train-10classes/all'
+    path_prefix = '/luckygong/data/ImageNet/train-10classes/all/'
     loader = Loader(input_file, delimiter, raw_size, processed_size, is_training, batch_size, num_prefetch,
                  num_threads, path_prefix, shuffle=False, inference_only=False)
     loader.load()
