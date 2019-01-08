@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be0d1298-4a1e-4236-99d8-ade97149d239" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/model/vgg6.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/vgg16.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/vgg16.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -17,8 +17,8 @@
       <file leaf-file-name="vgg16.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/model/vgg16.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="39" column="7" lean-forward="true" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
+            <state relative-caret-position="364">
+              <caret line="108" column="12" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="12" />
               <folding>
                 <element signature="e#1418#1456#0" expanded="true" />
               </folding>
@@ -53,6 +53,7 @@
       <list>
         <option value="$PROJECT_DIR$/src/loaddata/data_loader.py" />
         <option value="$PROJECT_DIR$/src/model/vgg6.py" />
+        <option value="$PROJECT_DIR$/src/model/vgg16.py" />
       </list>
     </option>
   </component>
@@ -202,8 +203,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/model/vgg16.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="39" column="7" lean-forward="true" selection-start-line="39" selection-start-column="7" selection-end-line="39" selection-end-column="7" />
+        <state relative-caret-position="364">
+          <caret line="108" column="12" selection-start-line="108" selection-start-column="12" selection-end-line="108" selection-end-column="12" />
           <folding>
             <element signature="e#1418#1456#0" expanded="true" />
           </folding>
