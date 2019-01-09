@@ -25,6 +25,7 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
+import numpy as np
 import tensorflow as tf
 
 slim = tf.contrib.slim
@@ -101,26 +102,37 @@ def vgg_16(num_classes=10, is_training=True, dropout_keep_prob=0.5, spatial_sque
 
             # Convert end_points_collection into a end_point dict.
             end_points = slim.utils.convert_collection_to_dict(end_points_collection)
-
+            
             # if global_pool:
             #   net = tf.reduce_mean(net, [1, 2], keep_dims=True, name='global_pool')
             #   end_points['global_pool'] = net
 
             # net = slim.conv2d(net, num_classes, [1, 1], activation_fn=None, normalizer_fn=None, scope='fc8')
-            net = slim.fully_connected(net, num_classes, scope='fc8')
+            shape = int(np.prod(net.get_shape()[1:]))
+            net = slim.fully_connected(tf.reshape(net, [-1, shape]), num_classes, scope='fc8')
 
+            print('net.shape ' + str(net.shape))
             if spatial_squeeze:
                 net = tf.squeeze(net, [1, 2], name='fc8/squeezed')
-                end_points[sc.name + '/fc8'] = net
             
             finaloutput = tf.nn.softmax(net, name="softmax")
-
+            print('finaloutput.shape ' + str(finaloutput.shape))
             prediction_labels = tf.argmax(finaloutput, axis=1, name="output")
-            
-            loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=finaloutput, labels=y))
+            print('prediction_labels.shape ' + str(prediction_labels.shape))
+            print('y_labels.shape ' + str(tf.argmax(y, axis = 1).shape))
+
+            loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=net, labels=y))
             optimizer = tf.train.AdamOptimizer(learning_rate=1e-4).minimize(loss)
-            accuracy = tf.reduce_mean(tf.cast(tf.equal(prediction_labels, y), tf.float32))
-            correct_times = tf.reduce_sum(tf.cast(tf.equal(prediction_labels, y), tf.int32))
+            accuracy = tf.reduce_mean(tf.cast(tf.equal(prediction_labels, tf.argmax(y, axis = 1)), tf.float32))
+            correct_times = tf.reduce_sum(tf.cast(tf.equal(prediction_labels, tf.argmax(y, axis = 1)), tf.int32))
+
+            end_points['optimizer'] = optimizer
+            end_points['loss'] = loss
+            end_points['accuracy'] = accuracy
+            end_points['correct_times'] = correct_times
+            end_points['x'] = x
+            end_points['y'] = y
+
             return net, end_points
 
 vgg_16.default_image_size = 224

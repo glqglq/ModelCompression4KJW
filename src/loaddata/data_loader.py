@@ -13,7 +13,7 @@ import tensorflow as tf
  For more details, please read inline comments below.
 """
 
-
+label_dic = {0: 0, 265: 1, 388: 2, 412: 3, 487: 4, 589: 5, 752: 6, 779: 7, 84: 8, 9: 9}
 class Loader:
     """
      Constructor. it gathers the necessary information to build a data loader pipeline.
@@ -36,7 +36,7 @@ class Loader:
     """
 
     def __init__(self, input_file, delimiter, raw_size, processed_size, is_training, batch_size, num_prefetch,
-                 num_threads, path_prefix, shuffle=False, inference_only=False):
+                 num_threads, path_prefix, num_classes, shuffle=False, inference_only=False):
         self.input_file = input_file
         self.delimiter = delimiter  # 分隔符
         self.raw_size = raw_size
@@ -48,6 +48,7 @@ class Loader:
         self.shuffle = shuffle  # 是否随机乱序
         self.path_prefix = path_prefix
         self.inference_only = inference_only
+        self.num_classes = num_classes
 
     """
      This method reads and parses the input file and return two lists of imge paths and their labels
@@ -70,17 +71,11 @@ class Loader:
             for line in f:
                 tokens = line.split(self.delimiter)
                 filepaths.append(tokens[0])
-                labels.append(tokens[1].rstrip().lower())
+                labels.append(label_dic[int(tokens[1].rstrip().lower())])
             # assign class ids
             self.label_set = set(labels)
-            if all([x.isdigit() for x in self.label_set]):
-                print("found %d classes" % (len(self.label_set)))
-                self.label_dict = {int(x): int(x) for x in sorted(self.label_set)}
-                labels = [int(x) for x in labels]
-            else:
-                print("found %d classes" % (len(self.label_set)))
-                self.label_dict = {i: x for i, x in enumerate(sorted(self.label_set))}
-                labels = [dict(zip(self.label_dict.values(), self.label_dict.keys()))[x] for x in labels]
+            print("found %d classes" % (len(self.label_set)))
+            self.label_dict = {x: x for x in sorted(self.label_set)}
             print(self.label_dict)
             # return results
             return filepaths, labels
@@ -145,6 +140,12 @@ class Loader:
         # Create a queue that produces the filenames to read.
         if not self.inference_only:
             # amke FIFO queue of file paths and their labels, 从tensor列表中按顺序或随机抽取一个tensor
+            labels = tf.cast(labels, tf.int32)
+            all_size = tf.size(labels)
+            labels = tf.expand_dims(labels, 1)
+            indices = tf.expand_dims(tf.range(0, all_size, 1), 1) # 1*13000
+            concated = tf.concat([indices, labels],1)
+            labels = tf.sparse_to_dense(concated, tf.stack([all_size, self.num_classes]), 1, 0)
             filename_queue = tf.train.slice_input_producer([filenames, labels],
                                                            shuffle=self.shuffle if self.is_training else False)
 
@@ -153,17 +154,16 @@ class Loader:
 
             # prprocess images
             reshaped_image = self.preprocess(image_queue)
-
+            
             # label
-            label = tf.cast(label_queue, tf.int64)
+            labels = tf.cast(label_queue, tf.int64)
+            
+            # image info
             img_info = image_queue
-
-            print('Filling queue with %d images before starting to train. '
-                  'This may take some times.' % self.num_prefetch)
 
             # Load images and labels with additional info and return batches
             return tf.train.batch(
-                [reshaped_image, label, img_info],
+                [reshaped_image, labels, img_info],
                 batch_size=self.batch_size,
                 num_threads=self.num_threads,
                 capacity=self.num_prefetch,
@@ -241,13 +241,13 @@ if __name__ == '__main__':
 
     raw_size = [224, 224, 3]
     processed_size = [224, 224, 3]
-
+    num_classes = 10
     num_prefetch = 32
     is_training = True
     batch_size = 32
     num_threads = 1
     path_prefix = '/luckygong/data/ImageNet/train-10classes/all/'
     loader = Loader(input_file, delimiter, raw_size, processed_size, is_training, batch_size, num_prefetch,
-                 num_threads, path_prefix, shuffle=False, inference_only=False)
+                 num_threads, path_prefix, num_classes, shuffle=False, inference_only=False)
     loader.load()
     print('load done')
