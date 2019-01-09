@@ -43,7 +43,7 @@ def vgg_arg_scope(weight_decay=0.0005):
         with slim.arg_scope([slim.conv2d], padding='SAME') as arg_sc:
             return arg_sc
 
-def vgg_16(inputs, num_classes=1000, is_training=True, dropout_keep_prob=0.5, spatial_squeeze=True, scope='vgg_16', fc_conv_padding='VALID', global_pool=False):
+def vgg_16(num_classes=10, is_training=True, dropout_keep_prob=0.5, spatial_squeeze=False, scope='vgg_16', fc_conv_padding='VALID', global_pool=False):
     """Oxford Net VGG 16-Layers version D Example.
 
         Note: All the fully_connected layers have been transformed to conv2d layers.
@@ -74,11 +74,13 @@ def vgg_16(inputs, num_classes=1000, is_training=True, dropout_keep_prob=0.5, sp
           or the input to the logits layer (if num_classes is 0 or None).
         end_points: a dict of tensors with intermediate activations.
     """
-    with tf.variable_scope(scope, 'vgg_16', [inputs]) as sc:
+    x = tf.placeholder(tf.float32, shape=[None, 224, 224, 3], name='x_placeholder')
+    y = tf.placeholder(tf.int64, shape=[None, num_classes], name='y_placeholder')
+    with tf.variable_scope(scope, 'vgg_16', [x]) as sc:
         end_points_collection = sc.original_name_scope + '_end_points'
         # Collect outputs for conv2d, fully_connected and max_pool2d.
         with slim.arg_scope([slim.conv2d, slim.fully_connected, slim.max_pool2d], outputs_collections=end_points_collection):
-            net = slim.repeat(inputs, 2, slim.conv2d, 64, [3, 3], scope='conv1')
+            net = slim.repeat(x, 2, slim.conv2d, 64, [3, 3], scope='conv1')
             net = slim.max_pool2d(net, [2, 2], scope='pool1')
             net = slim.repeat(net, 2, slim.conv2d, 128, [3, 3], scope='conv2')
             net = slim.max_pool2d(net, [2, 2], scope='pool2')
@@ -110,6 +112,15 @@ def vgg_16(inputs, num_classes=1000, is_training=True, dropout_keep_prob=0.5, sp
             if spatial_squeeze:
                 net = tf.squeeze(net, [1, 2], name='fc8/squeezed')
                 end_points[sc.name + '/fc8'] = net
+            
+            finaloutput = tf.nn.softmax(net, name="softmax")
+
+            prediction_labels = tf.argmax(finaloutput, axis=1, name="output")
+            
+            loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=finaloutput, labels=y))
+            optimizer = tf.train.AdamOptimizer(learning_rate=1e-4).minimize(loss)
+            accuracy = tf.reduce_mean(tf.cast(tf.equal(prediction_labels, y), tf.float32))
+            correct_times = tf.reduce_sum(tf.cast(tf.equal(prediction_labels, y), tf.int32))
             return net, end_points
 
 vgg_16.default_image_size = 224
