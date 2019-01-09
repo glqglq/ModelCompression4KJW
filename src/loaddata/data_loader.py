@@ -36,7 +36,7 @@ class Loader:
     """
 
     def __init__(self, input_file, delimiter, raw_size, processed_size, is_training, batch_size, num_prefetch,
-                 num_threads, path_prefix, num_classes, shuffle=False, inference_only=False):
+                 num_threads, path_prefix, num_classes, num_epochs, shuffle=False, inference_only=False):
         self.input_file = input_file
         self.delimiter = delimiter  # 分隔符
         self.raw_size = raw_size
@@ -49,6 +49,7 @@ class Loader:
         self.path_prefix = path_prefix
         self.inference_only = inference_only
         self.num_classes = num_classes
+        self.num_epochs = num_epochs
 
     """
      This method reads and parses the input file and return two lists of imge paths and their labels
@@ -168,7 +169,7 @@ class Loader:
                 batch_size=self.batch_size,
                 num_threads=self.num_threads,
                 capacity=self.num_prefetch,
-                allow_smaller_final_batch=True if not self.is_training else False)
+                allow_smaller_final_batch=True)
 
         else:
 
@@ -187,7 +188,7 @@ class Loader:
                 batch_size=self.batch_size,
                 num_threads=self.num_threads,
                 capacity=self.num_prefetch,
-                allow_smaller_final_batch=True if not self.is_training else False)
+                allow_smaller_final_batch=True)
 
     """
      This method applies different data aufmentation techniques to an input image
