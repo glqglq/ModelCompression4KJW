@@ -122,7 +122,7 @@ def vgg_16(num_classes=10, is_training=True, dropout_keep_prob=0.5, spatial_sque
             print('y_labels.shape ' + str(tf.argmax(y, axis = 1).shape))
 
             loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=net, labels=y))
-            optimizer = tf.train.AdamOptimizer(learning_rate=1e-4).minimize(loss)
+            optimizer = tf.train.AdamOptimizer(learning_rate=0.01).minimize(loss)
             accuracy = tf.reduce_mean(tf.cast(tf.equal(prediction_labels, tf.argmax(y, axis = 1)), tf.float32))
             correct_times = tf.reduce_sum(tf.cast(tf.equal(prediction_labels, tf.argmax(y, axis = 1)), tf.int32))
 
