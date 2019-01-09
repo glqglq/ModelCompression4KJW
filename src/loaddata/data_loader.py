@@ -146,6 +146,7 @@ class Loader:
             indices = tf.expand_dims(tf.range(0, all_size, 1), 1) # 1*13000
             concated = tf.concat([indices, labels],1)
             labels = tf.sparse_to_dense(concated, tf.stack([all_size, self.num_classes]), 1, 0)
+
             filename_queue = tf.train.slice_input_producer([filenames, labels],
                                                            shuffle=self.shuffle if self.is_training else False)
 
@@ -156,7 +157,7 @@ class Loader:
             reshaped_image = self.preprocess(image_queue)
             
             # label
-            labels = tf.cast(label_queue, tf.int64)
+            labels = tf.cast(label_queue, tf.int32)
             
             # image info
             img_info = image_queue

@@ -93,7 +93,8 @@ def vgg_16(num_classes=10, is_training=True, dropout_keep_prob=0.5, spatial_sque
             net = slim.max_pool2d(net, [2, 2], scope='pool5')
 
             # net = slim.conv2d(net, 4096, [7, 7], padding=fc_conv_padding, scope='fc6')
-            net = slim.fully_connected(net, 4096, scope='fc6')
+            shape = int(np.prod(net.get_shape()[1:]))
+            net = slim.fully_connected(tf.reshape(net, [-1, shape]), 4096, scope='fc6')
             net = slim.dropout(net, dropout_keep_prob, is_training=is_training, scope='dropout6')
 
             # net = slim.conv2d(net, 4096, [1, 1], scope='fc7')
@@ -108,10 +109,8 @@ def vgg_16(num_classes=10, is_training=True, dropout_keep_prob=0.5, spatial_sque
             #   end_points['global_pool'] = net
 
             # net = slim.conv2d(net, num_classes, [1, 1], activation_fn=None, normalizer_fn=None, scope='fc8')
-            shape = int(np.prod(net.get_shape()[1:]))
-            net = slim.fully_connected(tf.reshape(net, [-1, shape]), num_classes, scope='fc8')
+            net = slim.fully_connected(net, num_classes, scope='fc8')
 
-            print('net.shape ' + str(net.shape))
             if spatial_squeeze:
                 net = tf.squeeze(net, [1, 2], name='fc8/squeezed')
             
@@ -121,15 +120,11 @@ def vgg_16(num_classes=10, is_training=True, dropout_keep_prob=0.5, spatial_sque
             print('prediction_labels.shape ' + str(prediction_labels.shape))
             print('y_labels.shape ' + str(tf.argmax(y, axis = 1).shape))
 
-            loss = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=net, labels=y))
-            optimizer = tf.train.AdamOptimizer(learning_rate=0.01).minimize(loss)
-            accuracy = tf.reduce_mean(tf.cast(tf.equal(prediction_labels, tf.argmax(y, axis = 1)), tf.float32))
-            correct_times = tf.reduce_sum(tf.cast(tf.equal(prediction_labels, tf.argmax(y, axis = 1)), tf.int32))
+            end_points['loss'] = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(logits=net, labels=y))
+            end_points['optimizer'] = tf.train.AdamOptimizer(learning_rate=0.0001).minimize(end_points['loss'])
+            end_points['accuracy'] = tf.reduce_mean(tf.cast(tf.equal(prediction_labels, tf.argmax(y, axis = 1)), tf.float32))
+            end_points['correct_times'] = tf.reduce_sum(tf.cast(tf.equal(prediction_labels, tf.argmax(y, axis = 1)), tf.int32))
 
-            end_points['optimizer'] = optimizer
-            end_points['loss'] = loss
-            end_points['accuracy'] = accuracy
-            end_points['correct_times'] = correct_times
             end_points['x'] = x
             end_points['y'] = y
 

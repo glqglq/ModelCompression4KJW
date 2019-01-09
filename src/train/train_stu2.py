@@ -20,7 +20,7 @@ if __name__ == '__main__':
     processed_size = [224, 224, 3]
     num_classes = 10
     is_training = True
-    batch_size = 128
+    batch_size = 64
     num_prefetch = batch_size
     num_threads = 1
     num_epochs = 5
@@ -47,6 +47,7 @@ if __name__ == '__main__':
                 now_step = 1
                 while not coord.should_stop():
                     i,l = sess.run([image_batch,label_batch])
+                    # print(i[0][0][0])
                     _, loss, acc = sess.run([end_points['optimizer'], end_points['loss'], end_points['accuracy']], feed_dict = {end_points['x']:i, end_points['y']:l})
                     print('run time: ' + str(time.time() - start_time) + '\tbatch: ' + str(j + 1)  + '\tstep: '  + str(now_step) + '\tdata size: ' + str(i.shape) + ', ' + str(l.shape) + '\tbatch loss: ' + str(loss) + '\tacc: ' + str(acc))
                     now_step += 1
