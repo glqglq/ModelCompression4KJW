@@ -36,7 +36,7 @@ class Loader:
     """
 
     def __init__(self, input_file, delimiter, raw_size, processed_size, is_training, batch_size, num_prefetch,
-                 num_threads, path_prefix, num_classes, num_epochs, shuffle=False, inference_only=False):
+                 num_threads, path_prefix, num_classes, shuffle=False, inference_only=False):
         self.input_file = input_file
         self.delimiter = delimiter  # 分隔符
         self.raw_size = raw_size
@@ -49,7 +49,6 @@ class Loader:
         self.path_prefix = path_prefix
         self.inference_only = inference_only
         self.num_classes = num_classes
-        self.num_epochs = num_epochs
 
     """
      This method reads and parses the input file and return two lists of imge paths and their labels
@@ -148,8 +147,7 @@ class Loader:
             concated = tf.concat([indices, labels],1)
             labels = tf.sparse_to_dense(concated, tf.stack([all_size, self.num_classes]), 1, 0)
 
-            filename_queue = tf.train.slice_input_producer([filenames, labels],
-                                                           shuffle=self.shuffle if self.is_training else False)
+            filename_queue = tf.train.slice_input_producer([filenames, labels], shuffle=self.shuffle if self.is_training else False)
 
             image_queue = filename_queue[0]
             label_queue = filename_queue[1]
@@ -173,8 +171,7 @@ class Loader:
 
         else:
 
-            filename_queue = tf.train.slice_input_producer([filenames],
-                                                           shuffle=self.shuffle if self.is_training else False)
+            filename_queue = tf.train.slice_input_producer([filenames], shuffle=self.shuffle if self.is_training else False)
             image_queue = filename_queue[0]
             reshaped_image = self.preprocess(image_queue)
             img_info = image_queue
