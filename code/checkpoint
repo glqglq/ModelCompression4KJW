@@ -1,0 +1,2 @@
+model_checkpoint_path: "/code/slim/param_re_out"
+all_model_checkpoint_paths: "/code/slim/param_re_out"

@@ -1,0 +1,1906 @@
+WARNING:tensorflow:From hinton_kd.py:384: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See @{tf.nn.softmax_cross_entropy_with_logits_v2}.
+
+WARNING:tensorflow:From hinton_kd.py:250: all_variables (from tensorflow.python.ops.variables) is deprecated and will be removed after 2017-03-02.
+Instructions for updating:
+Please use tf.global_variables instead.
+2019-03-15 02:51:04.846148: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-03-15 02:51:06.322114: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1405] Found device 0 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.607
+pciBusID: 0000:02:00.0
+totalMemory: 10.92GiB freeMemory: 10.76GiB
+2019-03-15 02:51:06.322185: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1484] Adding visible gpu devices: 0
+2019-03-15 02:51:07.953465: I tensorflow/core/common_runtime/gpu/gpu_device.cc:965] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-03-15 02:51:07.953524: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971]      0 
+2019-03-15 02:51:07.953535: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] 0:   N 
+2019-03-15 02:51:07.953850: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1097] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10409 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:02:00.0, compute capability: 6.1)
+INFO:tensorflow:Restoring parameters from /docker_data/out/teacher/out/model.ckpt-12149
+Config Done.
+(50, 10)
+Load and Preprocess Training Data Done.
+Load and Preprocess Validation Data Done.
+network_fn is :
+ <function vgg_16 at 0x7fe20b81de18>
+network_fn is :
+ <function vgg_16 at 0x7fe20b81dd90>
+Set Loss Done.
+Set Optimization Done.
+175670407
+None
+Definate Network and Load Teacher Model Done
+Variable:0
+vgg_16/conv1/conv1_1/weights:0
+vgg_16/conv1/conv1_1/biases:0
+vgg_16/conv1/conv1_2/weights:0
+vgg_16/conv1/conv1_2/biases:0
+vgg_16/conv2/conv2_1/weights:0
+vgg_16/conv2/conv2_1/biases:0
+vgg_16/conv2/conv2_2/weights:0
+vgg_16/conv2/conv2_2/biases:0
+vgg_16/conv3/conv3_1/weights:0
+vgg_16/conv3/conv3_1/biases:0
+vgg_16/conv3/conv3_2/weights:0
+vgg_16/conv3/conv3_2/biases:0
+vgg_16/conv3/conv3_3/weights:0
+vgg_16/conv3/conv3_3/biases:0
+vgg_16/conv4/conv4_1/weights:0
+vgg_16/conv4/conv4_1/biases:0
+vgg_16/conv4/conv4_2/weights:0
+vgg_16/conv4/conv4_2/biases:0
+vgg_16/conv4/conv4_3/weights:0
+vgg_16/conv4/conv4_3/biases:0
+vgg_16/conv5/conv5_1/weights:0
+vgg_16/conv5/conv5_1/biases:0
+vgg_16/conv5/conv5_2/weights:0
+vgg_16/conv5/conv5_2/biases:0
+vgg_16/conv5/conv5_3/weights:0
+vgg_16/conv5/conv5_3/biases:0
+vgg_16/fc6/weights:0
+vgg_16/fc6/biases:0
+vgg_16/fc7/weights:0
+vgg_16/fc7/biases:0
+vgg_16/fc8/weights:0
+vgg_16/fc8/biases:0
+vgg_16_stu/conv1/conv1_1/weights:0
+vgg_16_stu/conv1/conv1_1/biases:0
+vgg_16_stu/conv1/conv1_2/weights:0
+vgg_16_stu/conv1/conv1_2/biases:0
+vgg_16_stu/conv2/conv2_1/weights:0
+vgg_16_stu/conv2/conv2_1/biases:0
+vgg_16_stu/conv2/conv2_2/weights:0
+vgg_16_stu/conv2/conv2_2/biases:0
+vgg_16_stu/conv3/conv3_1/weights:0
+vgg_16_stu/conv3/conv3_1/biases:0
+vgg_16_stu/conv3/conv3_2/weights:0
+vgg_16_stu/conv3/conv3_2/biases:0
+vgg_16_stu/conv3/conv3_3/weights:0
+vgg_16_stu/conv3/conv3_3/biases:0
+vgg_16_stu/conv4/conv4_1/weights:0
+vgg_16_stu/conv4/conv4_1/biases:0
+vgg_16_stu/conv4/conv4_2/weights:0
+vgg_16_stu/conv4/conv4_2/biases:0
+vgg_16_stu/conv4/conv4_3/weights:0
+vgg_16_stu/conv4/conv4_3/biases:0
+vgg_16_stu/fc6/weights:0
+vgg_16_stu/fc6/biases:0
+vgg_16_stu/fc7/weights:0
+vgg_16_stu/fc7/biases:0
+vgg_16_stu/fc8/weights:0
+vgg_16_stu/fc8/biases:0
+beta1_power:0
+beta2_power:0
+vgg_16_stu/conv1/conv1_1/weights/Adam:0
+vgg_16_stu/conv1/conv1_1/weights/Adam_1:0
+vgg_16_stu/conv1/conv1_1/biases/Adam:0
+vgg_16_stu/conv1/conv1_1/biases/Adam_1:0
+vgg_16_stu/conv1/conv1_2/weights/Adam:0
+vgg_16_stu/conv1/conv1_2/weights/Adam_1:0
+vgg_16_stu/conv1/conv1_2/biases/Adam:0
+vgg_16_stu/conv1/conv1_2/biases/Adam_1:0
+vgg_16_stu/conv2/conv2_1/weights/Adam:0
+vgg_16_stu/conv2/conv2_1/weights/Adam_1:0
+vgg_16_stu/conv2/conv2_1/biases/Adam:0
+vgg_16_stu/conv2/conv2_1/biases/Adam_1:0
+vgg_16_stu/conv2/conv2_2/weights/Adam:0
+vgg_16_stu/conv2/conv2_2/weights/Adam_1:0
+vgg_16_stu/conv2/conv2_2/biases/Adam:0
+vgg_16_stu/conv2/conv2_2/biases/Adam_1:0
+vgg_16_stu/conv3/conv3_1/weights/Adam:0
+vgg_16_stu/conv3/conv3_1/weights/Adam_1:0
+vgg_16_stu/conv3/conv3_1/biases/Adam:0
+vgg_16_stu/conv3/conv3_1/biases/Adam_1:0
+vgg_16_stu/conv3/conv3_2/weights/Adam:0
+vgg_16_stu/conv3/conv3_2/weights/Adam_1:0
+vgg_16_stu/conv3/conv3_2/biases/Adam:0
+vgg_16_stu/conv3/conv3_2/biases/Adam_1:0
+vgg_16_stu/conv3/conv3_3/weights/Adam:0
+vgg_16_stu/conv3/conv3_3/weights/Adam_1:0
+vgg_16_stu/conv3/conv3_3/biases/Adam:0
+vgg_16_stu/conv3/conv3_3/biases/Adam_1:0
+vgg_16_stu/conv4/conv4_1/weights/Adam:0
+vgg_16_stu/conv4/conv4_1/weights/Adam_1:0
+vgg_16_stu/conv4/conv4_1/biases/Adam:0
+vgg_16_stu/conv4/conv4_1/biases/Adam_1:0
+vgg_16_stu/conv4/conv4_2/weights/Adam:0
+vgg_16_stu/conv4/conv4_2/weights/Adam_1:0
+vgg_16_stu/conv4/conv4_2/biases/Adam:0
+vgg_16_stu/conv4/conv4_2/biases/Adam_1:0
+vgg_16_stu/conv4/conv4_3/weights/Adam:0
+vgg_16_stu/conv4/conv4_3/weights/Adam_1:0
+vgg_16_stu/conv4/conv4_3/biases/Adam:0
+vgg_16_stu/conv4/conv4_3/biases/Adam_1:0
+vgg_16_stu/fc6/weights/Adam:0
+vgg_16_stu/fc6/weights/Adam_1:0
+vgg_16_stu/fc6/biases/Adam:0
+vgg_16_stu/fc6/biases/Adam_1:0
+vgg_16_stu/fc7/weights/Adam:0
+vgg_16_stu/fc7/weights/Adam_1:0
+vgg_16_stu/fc7/biases/Adam:0
+vgg_16_stu/fc7/biases/Adam_1:0
+vgg_16_stu/fc8/weights/Adam:0
+vgg_16_stu/fc8/weights/Adam_1:0
+vgg_16_stu/fc8/biases/Adam:0
+vgg_16_stu/fc8/biases/Adam_1:0
+Start Training
+Epoch 1, 1, global step: 1, loss 54.191631, acc 0.100000 current count 5
+Epoch 1, 2, global step: 2, loss 53.124672, acc 0.100000 current count 5
+Epoch 1, 3, global step: 3, loss 52.506321, acc 0.100000 current count 5
+Epoch 1, 4, global step: 4, loss 53.507851, acc 0.120000 current count 6
+Epoch 1, 5, global step: 5, loss 53.005451, acc 0.120000 current count 6
+Epoch 1, 6, global step: 6, loss 52.784973, acc 0.120000 current count 6
+Epoch 1, 7, global step: 7, loss 53.544712, acc 0.080000 current count 4
+Epoch 1, 8, global step: 8, loss 53.076244, acc 0.120000 current count 6
+Epoch 1, 9, global step: 9, loss 53.541077, acc 0.120000 current count 6
+Epoch 1, 10, global step: 10, loss 52.925087, acc 0.080000 current count 4
+Epoch 1, 11, global step: 11, loss 52.376324, acc 0.080000 current count 4
+Epoch 1, 12, global step: 12, loss 52.775093, acc 0.160000 current count 8
+Epoch 1, 13, global step: 13, loss 51.961567, acc 0.180000 current count 9
+Epoch 1, 14, global step: 14, loss 53.083015, acc 0.120000 current count 6
+Epoch 1, 15, global step: 15, loss 52.482712, acc 0.100000 current count 5
+Epoch 1, 16, global step: 16, loss 53.316494, acc 0.080000 current count 4
+Epoch 1, 17, global step: 17, loss 54.063206, acc 0.100000 current count 5
+Epoch 1, 18, global step: 18, loss 51.987640, acc 0.040000 current count 2
+Epoch 1, 19, global step: 19, loss 52.737305, acc 0.060000 current count 3
+Epoch 1, 20, global step: 20, loss 53.096573, acc 0.160000 current count 8
+Epoch 1, 21, global step: 21, loss 52.054268, acc 0.080000 current count 4
+Epoch 1, 22, global step: 22, loss 53.871799, acc 0.040000 current count 2
+Epoch 1, 23, global step: 23, loss 53.165203, acc 0.100000 current count 5
+Epoch 1, 24, global step: 24, loss 53.709305, acc 0.040000 current count 2
+Epoch 1, 25, global step: 25, loss 52.213272, acc 0.140000 current count 7
+Epoch 1, 26, global step: 26, loss 53.153591, acc 0.080000 current count 4
+Epoch 1, 27, global step: 27, loss 52.283821, acc 0.060000 current count 3
+Epoch 1, 28, global step: 28, loss 52.136112, acc 0.060000 current count 3
+Epoch 1, 29, global step: 29, loss 53.196064, acc 0.140000 current count 7
+Epoch 1, 30, global step: 30, loss 53.149334, acc 0.120000 current count 6
+Epoch 1, 31, global step: 31, loss 52.805420, acc 0.120000 current count 6
+Epoch 1, 32, global step: 32, loss 53.102409, acc 0.160000 current count 8
+Epoch 1, 33, global step: 33, loss 51.565434, acc 0.160000 current count 8
+Epoch 1, 34, global step: 34, loss 52.667274, acc 0.040000 current count 2
+Epoch 1, 35, global step: 35, loss 52.658432, acc 0.100000 current count 5
+Epoch 1, 36, global step: 36, loss 51.975655, acc 0.160000 current count 8
+Epoch 1, 37, global step: 37, loss 52.397118, acc 0.160000 current count 8
+Epoch 1, 38, global step: 38, loss 52.170956, acc 0.200000 current count 10
+Epoch 1, 39, global step: 39, loss 52.125961, acc 0.080000 current count 4
+Epoch 1, 40, global step: 40, loss 53.319973, acc 0.060000 current count 3
+Epoch 1, 41, global step: 41, loss 52.651928, acc 0.080000 current count 4
+Epoch 1, 42, global step: 42, loss 52.669937, acc 0.100000 current count 5
+Epoch 1, 43, global step: 43, loss 52.262684, acc 0.200000 current count 10
+Epoch 1, 44, global step: 44, loss 52.029858, acc 0.160000 current count 8
+Epoch 1, 45, global step: 45, loss 52.067875, acc 0.120000 current count 6
+Epoch 1, 46, global step: 46, loss 52.927254, acc 0.020000 current count 1
+Epoch 1, 47, global step: 47, loss 52.636028, acc 0.120000 current count 6
+Epoch 1, 48, global step: 48, loss 52.035423, acc 0.140000 current count 7
+Epoch 1, 49, global step: 49, loss 52.326267, acc 0.120000 current count 6
+Epoch 1, 50, global step: 50, loss 52.856194, acc 0.080000 current count 4
+Eval 1, 50, global step:50, acc 0.090000 current count 45, all count 500
+Save model, this step acc: 0.090000, last step acc: 0.000000
+Epoch 1, 51, global step: 51, loss 52.463303, acc 0.100000 current count 5
+Epoch 1, 52, global step: 52, loss 52.430012, acc 0.080000 current count 4
+Epoch 1, 53, global step: 53, loss 52.839802, acc 0.120000 current count 6
+Epoch 1, 54, global step: 54, loss 52.141659, acc 0.080000 current count 4
+Epoch 1, 55, global step: 55, loss 52.573467, acc 0.080000 current count 4
+Epoch 1, 56, global step: 56, loss 52.756859, acc 0.080000 current count 4
+Epoch 1, 57, global step: 57, loss 52.424614, acc 0.140000 current count 7
+Epoch 1, 58, global step: 58, loss 52.962280, acc 0.060000 current count 3
+Epoch 1, 59, global step: 59, loss 52.060413, acc 0.060000 current count 3
+Epoch 1, 60, global step: 60, loss 52.951050, acc 0.060000 current count 3
+Epoch 1, 61, global step: 61, loss 52.060810, acc 0.120000 current count 6
+Epoch 1, 62, global step: 62, loss 53.260273, acc 0.080000 current count 4
+Epoch 1, 63, global step: 63, loss 52.756493, acc 0.080000 current count 4
+Epoch 1, 64, global step: 64, loss 52.656956, acc 0.120000 current count 6
+Epoch 1, 65, global step: 65, loss 52.203884, acc 0.140000 current count 7
+Epoch 1, 66, global step: 66, loss 52.127201, acc 0.160000 current count 8
+Epoch 1, 67, global step: 67, loss 52.483425, acc 0.140000 current count 7
+Epoch 1, 68, global step: 68, loss 52.636597, acc 0.100000 current count 5
+Epoch 1, 69, global step: 69, loss 52.534531, acc 0.100000 current count 5
+Epoch 1, 70, global step: 70, loss 52.510696, acc 0.060000 current count 3
+Epoch 1, 71, global step: 71, loss 53.032166, acc 0.020000 current count 1
+Epoch 1, 72, global step: 72, loss 52.339069, acc 0.080000 current count 4
+Epoch 1, 73, global step: 73, loss 52.225132, acc 0.120000 current count 6
+Epoch 1, 74, global step: 74, loss 52.294746, acc 0.100000 current count 5
+Epoch 1, 75, global step: 75, loss 52.438274, acc 0.100000 current count 5
+Epoch 1, 76, global step: 76, loss 52.520336, acc 0.060000 current count 3
+Epoch 1, 77, global step: 77, loss 52.852230, acc 0.040000 current count 2
+Epoch 1, 78, global step: 78, loss 51.981926, acc 0.120000 current count 6
+Epoch 1, 79, global step: 79, loss 51.876335, acc 0.140000 current count 7
+Epoch 1, 80, global step: 80, loss 52.405136, acc 0.120000 current count 6
+Epoch 1, 81, global step: 81, loss 52.418324, acc 0.080000 current count 4
+Epoch 1, 82, global step: 82, loss 52.026405, acc 0.060000 current count 3
+Epoch 1, 83, global step: 83, loss 52.200825, acc 0.040000 current count 2
+Epoch 1, 84, global step: 84, loss 52.452972, acc 0.120000 current count 6
+Epoch 1, 85, global step: 85, loss 52.494514, acc 0.100000 current count 5
+Epoch 1, 86, global step: 86, loss 52.714848, acc 0.020000 current count 1
+Epoch 1, 87, global step: 87, loss 52.420292, acc 0.140000 current count 7
+Epoch 1, 88, global step: 88, loss 51.969009, acc 0.160000 current count 8
+Epoch 1, 89, global step: 89, loss 52.394657, acc 0.200000 current count 10
+Epoch 1, 90, global step: 90, loss 52.479450, acc 0.060000 current count 3
+Epoch 1, 91, global step: 91, loss 52.717468, acc 0.140000 current count 7
+Epoch 1, 92, global step: 92, loss 52.908314, acc 0.060000 current count 3
+Epoch 1, 93, global step: 93, loss 52.516201, acc 0.120000 current count 6
+Epoch 1, 94, global step: 94, loss 52.206459, acc 0.180000 current count 9
+Epoch 1, 95, global step: 95, loss 52.820271, acc 0.040000 current count 2
+Epoch 1, 96, global step: 96, loss 51.859146, acc 0.160000 current count 8
+Epoch 1, 97, global step: 97, loss 52.171299, acc 0.140000 current count 7
+Epoch 1, 98, global step: 98, loss 52.180550, acc 0.120000 current count 6
+Epoch 1, 99, global step: 99, loss 52.758343, acc 0.040000 current count 2
+Epoch 1, 100, global step: 100, loss 52.342777, acc 0.120000 current count 6
+Eval 1, 100, global step:100, acc 0.108000 current count 54, all count 500
+Save model, this step acc: 0.108000, last step acc: 0.090000
+Epoch 1, 101, global step: 101, loss 52.389355, acc 0.160000 current count 8
+Epoch 1, 102, global step: 102, loss 52.112984, acc 0.140000 current count 7
+Epoch 1, 103, global step: 103, loss 53.160976, acc 0.020000 current count 1
+Epoch 1, 104, global step: 104, loss 52.554516, acc 0.060000 current count 3
+Epoch 1, 105, global step: 105, loss 52.496502, acc 0.080000 current count 4
+Epoch 1, 106, global step: 106, loss 52.554276, acc 0.100000 current count 5
+Epoch 1, 107, global step: 107, loss 52.385567, acc 0.060000 current count 3
+Epoch 1, 108, global step: 108, loss 52.266884, acc 0.060000 current count 3
+Epoch 1, 109, global step: 109, loss 52.908447, acc 0.080000 current count 4
+Epoch 1, 110, global step: 110, loss 52.718857, acc 0.120000 current count 6
+Epoch 1, 111, global step: 111, loss 52.870132, acc 0.100000 current count 5
+Epoch 1, 112, global step: 112, loss 52.366806, acc 0.140000 current count 7
+Epoch 1, 113, global step: 113, loss 52.170834, acc 0.160000 current count 8
+Epoch 1, 114, global step: 114, loss 52.043427, acc 0.140000 current count 7
+Epoch 1, 115, global step: 115, loss 52.787579, acc 0.020000 current count 1
+Epoch 1, 116, global step: 116, loss 51.986034, acc 0.140000 current count 7
+Epoch 1, 117, global step: 117, loss 52.279110, acc 0.080000 current count 4
+Epoch 1, 118, global step: 118, loss 52.616646, acc 0.060000 current count 3
+Epoch 1, 119, global step: 119, loss 52.036968, acc 0.120000 current count 6
+Epoch 1, 120, global step: 120, loss 52.240688, acc 0.080000 current count 4
+Epoch 1, 121, global step: 121, loss 53.039082, acc 0.060000 current count 3
+Epoch 1, 122, global step: 122, loss 52.287888, acc 0.080000 current count 4
+Epoch 1, 123, global step: 123, loss 52.371586, acc 0.080000 current count 4
+Epoch 1, 124, global step: 124, loss 52.267998, acc 0.140000 current count 7
+Epoch 1, 125, global step: 125, loss 51.717270, acc 0.100000 current count 5
+Epoch 1, 126, global step: 126, loss 52.170937, acc 0.160000 current count 8
+Epoch 1, 127, global step: 127, loss 52.412495, acc 0.060000 current count 3
+Epoch 1, 128, global step: 128, loss 52.430637, acc 0.040000 current count 2
+Epoch 1, 129, global step: 129, loss 52.590862, acc 0.120000 current count 6
+Epoch 1, 130, global step: 130, loss 51.975811, acc 0.180000 current count 9
+Epoch 1, 131, global step: 131, loss 52.039673, acc 0.120000 current count 6
+Epoch 1, 132, global step: 132, loss 51.812534, acc 0.100000 current count 5
+Epoch 1, 133, global step: 133, loss 52.028690, acc 0.160000 current count 8
+Epoch 1, 134, global step: 134, loss 51.990517, acc 0.100000 current count 5
+Epoch 1, 135, global step: 135, loss 52.174221, acc 0.140000 current count 7
+Epoch 1, 136, global step: 136, loss 52.488228, acc 0.060000 current count 3
+Epoch 1, 137, global step: 137, loss 52.266830, acc 0.120000 current count 6
+Epoch 1, 138, global step: 138, loss 52.234421, acc 0.100000 current count 5
+Epoch 1, 139, global step: 139, loss 52.019135, acc 0.160000 current count 8
+Epoch 1, 140, global step: 140, loss 52.417404, acc 0.060000 current count 3
+Epoch 1, 141, global step: 141, loss 52.504288, acc 0.040000 current count 2
+Epoch 1, 142, global step: 142, loss 52.169765, acc 0.200000 current count 10
+Epoch 1, 143, global step: 143, loss 52.037170, acc 0.080000 current count 4
+Epoch 1, 144, global step: 144, loss 52.456070, acc 0.040000 current count 2
+Epoch 1, 145, global step: 145, loss 52.128899, acc 0.080000 current count 4
+Epoch 1, 146, global step: 146, loss 52.392319, acc 0.080000 current count 4
+Epoch 1, 147, global step: 147, loss 52.414589, acc 0.040000 current count 2
+Epoch 1, 148, global step: 148, loss 52.209301, acc 0.140000 current count 7
+Epoch 1, 149, global step: 149, loss 51.891209, acc 0.160000 current count 8
+Epoch 1, 150, global step: 150, loss 52.417919, acc 0.200000 current count 10
+Eval 1, 150, global step:150, acc 0.120000 current count 60, all count 500
+Save model, this step acc: 0.120000, last step acc: 0.108000
+Epoch 1, 151, global step: 151, loss 51.918900, acc 0.140000 current count 7
+Epoch 1, 152, global step: 152, loss 52.669434, acc 0.060000 current count 3
+Epoch 1, 153, global step: 153, loss 52.107529, acc 0.060000 current count 3
+Epoch 1, 154, global step: 154, loss 51.908539, acc 0.200000 current count 10
+Epoch 1, 155, global step: 155, loss 52.384975, acc 0.060000 current count 3
+Epoch 1, 156, global step: 156, loss 52.387451, acc 0.080000 current count 4
+Epoch 1, 157, global step: 157, loss 52.453861, acc 0.080000 current count 4
+Epoch 1, 158, global step: 158, loss 51.937637, acc 0.100000 current count 5
+Epoch 1, 159, global step: 159, loss 52.188747, acc 0.180000 current count 9
+Epoch 1, 160, global step: 160, loss 52.326714, acc 0.080000 current count 4
+Epoch 1, 161, global step: 161, loss 52.294823, acc 0.120000 current count 6
+Epoch 1, 162, global step: 162, loss 52.301350, acc 0.120000 current count 6
+Epoch 1, 163, global step: 163, loss 52.335850, acc 0.120000 current count 6
+Epoch 1, 164, global step: 164, loss 52.498081, acc 0.120000 current count 6
+Epoch 1, 165, global step: 165, loss 51.976616, acc 0.140000 current count 7
+Epoch 1, 166, global step: 166, loss 51.995422, acc 0.160000 current count 8
+Epoch 1, 167, global step: 167, loss 52.152649, acc 0.140000 current count 7
+Epoch 1, 168, global step: 168, loss 52.308052, acc 0.120000 current count 6
+Epoch 1, 169, global step: 169, loss 51.968349, acc 0.140000 current count 7
+Epoch 1, 170, global step: 170, loss 52.746811, acc 0.040000 current count 2
+Epoch 1, 171, global step: 171, loss 51.839573, acc 0.060000 current count 3
+Epoch 1, 172, global step: 172, loss 52.463848, acc 0.060000 current count 3
+Epoch 1, 173, global step: 173, loss 52.200500, acc 0.220000 current count 11
+Epoch 1, 174, global step: 174, loss 52.363445, acc 0.140000 current count 7
+Epoch 1, 175, global step: 175, loss 52.061005, acc 0.080000 current count 4
+Epoch 1, 176, global step: 176, loss 52.300663, acc 0.160000 current count 8
+Epoch 1, 177, global step: 177, loss 51.940765, acc 0.120000 current count 6
+Epoch 1, 178, global step: 178, loss 52.509823, acc 0.120000 current count 6
+Epoch 1, 179, global step: 179, loss 52.040852, acc 0.160000 current count 8
+Epoch 1, 180, global step: 180, loss 52.158680, acc 0.120000 current count 6
+Epoch 1, 181, global step: 181, loss 52.278164, acc 0.100000 current count 5
+Epoch 1, 182, global step: 182, loss 51.692879, acc 0.180000 current count 9
+Epoch 1, 183, global step: 183, loss 52.241623, acc 0.100000 current count 5
+Epoch 1, 184, global step: 184, loss 51.987694, acc 0.180000 current count 9
+Epoch 1, 185, global step: 185, loss 52.499039, acc 0.000000 current count 0
+Epoch 1, 186, global step: 186, loss 52.145454, acc 0.160000 current count 8
+Epoch 1, 187, global step: 187, loss 52.386101, acc 0.140000 current count 7
+Epoch 1, 188, global step: 188, loss 52.412182, acc 0.080000 current count 4
+Epoch 1, 189, global step: 189, loss 52.271542, acc 0.060000 current count 3
+Epoch 1, 190, global step: 190, loss 51.887455, acc 0.100000 current count 5
+Epoch 1, 191, global step: 191, loss 52.392292, acc 0.020000 current count 1
+Epoch 1, 192, global step: 192, loss 51.732319, acc 0.160000 current count 8
+Epoch 1, 193, global step: 193, loss 51.740150, acc 0.180000 current count 9
+Epoch 1, 194, global step: 194, loss 52.097908, acc 0.080000 current count 4
+Epoch 1, 195, global step: 195, loss 52.648422, acc 0.080000 current count 4
+Epoch 1, 196, global step: 196, loss 52.211277, acc 0.180000 current count 9
+Epoch 1, 197, global step: 197, loss 52.605217, acc 0.040000 current count 2
+Epoch 1, 198, global step: 198, loss 52.337517, acc 0.080000 current count 4
+Epoch 1, 199, global step: 199, loss 52.010468, acc 0.120000 current count 6
+Epoch 1, 200, global step: 200, loss 52.116371, acc 0.060000 current count 3
+Eval 1, 200, global step:200, acc 0.110000 current count 55, all count 500
+Epoch 1, 201, global step: 201, loss 52.107376, acc 0.080000 current count 4
+Epoch 1, 202, global step: 202, loss 52.134701, acc 0.140000 current count 7
+Epoch 1, 203, global step: 203, loss 52.644901, acc 0.120000 current count 6
+Epoch 1, 204, global step: 204, loss 52.576797, acc 0.020000 current count 1
+Epoch 1, 205, global step: 205, loss 52.285435, acc 0.040000 current count 2
+Epoch 1, 206, global step: 206, loss 52.431786, acc 0.120000 current count 6
+Epoch 1, 207, global step: 207, loss 52.412964, acc 0.040000 current count 2
+Epoch 1, 208, global step: 208, loss 51.919136, acc 0.260000 current count 13
+Epoch 1, 209, global step: 209, loss 51.826096, acc 0.160000 current count 8
+Epoch 1, 210, global step: 210, loss 52.230278, acc 0.160000 current count 8
+Epoch 1, 211, global step: 211, loss 52.215122, acc 0.120000 current count 6
+Epoch 1, 212, global step: 212, loss 52.497208, acc 0.080000 current count 4
+Epoch 1, 213, global step: 213, loss 52.015648, acc 0.140000 current count 7
+Epoch 1, 214, global step: 214, loss 52.446880, acc 0.100000 current count 5
+Epoch 1, 215, global step: 215, loss 52.515579, acc 0.040000 current count 2
+Epoch 1, 216, global step: 216, loss 52.456284, acc 0.080000 current count 4
+Epoch 1, 217, global step: 217, loss 52.204075, acc 0.100000 current count 5
+Epoch 1, 218, global step: 218, loss 51.861465, acc 0.140000 current count 7
+Epoch 1, 219, global step: 219, loss 52.374516, acc 0.040000 current count 2
+Epoch 1, 220, global step: 220, loss 52.275894, acc 0.140000 current count 7
+Epoch 1, 221, global step: 221, loss 51.797348, acc 0.160000 current count 8
+Epoch 1, 222, global step: 222, loss 52.061043, acc 0.100000 current count 5
+Epoch 1, 223, global step: 223, loss 52.309982, acc 0.100000 current count 5
+Epoch 1, 224, global step: 224, loss 52.350849, acc 0.120000 current count 6
+Epoch 1, 225, global step: 225, loss 52.311474, acc 0.100000 current count 5
+Epoch 1, 226, global step: 226, loss 52.376186, acc 0.040000 current count 2
+Epoch 1, 227, global step: 227, loss 52.413437, acc 0.120000 current count 6
+Epoch 1, 228, global step: 228, loss 52.118847, acc 0.060000 current count 3
+Epoch 1, 229, global step: 229, loss 51.992958, acc 0.120000 current count 6
+Epoch 1, 230, global step: 230, loss 52.046249, acc 0.060000 current count 3
+Epoch 1, 231, global step: 231, loss 52.261734, acc 0.060000 current count 3
+Epoch 1, 232, global step: 232, loss 51.790482, acc 0.180000 current count 9
+Epoch 1, 233, global step: 233, loss 52.183212, acc 0.180000 current count 9
+Epoch 1, 234, global step: 234, loss 52.151836, acc 0.100000 current count 5
+Epoch 1, 235, global step: 235, loss 51.944057, acc 0.140000 current count 7
+Epoch 1, 236, global step: 236, loss 51.984268, acc 0.080000 current count 4
+Epoch 1, 237, global step: 237, loss 52.311424, acc 0.100000 current count 5
+Epoch 1, 238, global step: 238, loss 52.221027, acc 0.160000 current count 8
+Epoch 1, 239, global step: 239, loss 51.872795, acc 0.140000 current count 7
+Epoch 1, 240, global step: 240, loss 52.389946, acc 0.100000 current count 5
+Epoch 1, 241, global step: 241, loss 52.255146, acc 0.120000 current count 6
+Epoch 1, 242, global step: 242, loss 52.055664, acc 0.140000 current count 7
+Epoch 1, 243, global step: 243, loss 52.112713, acc 0.100000 current count 5
+Epoch 1, 244, global step: 244, loss 52.629787, acc 0.080000 current count 4
+Epoch 1, 245, global step: 245, loss 52.446594, acc 0.060000 current count 3
+Epoch 1, 246, global step: 246, loss 51.840076, acc 0.100000 current count 5
+Epoch 1, 247, global step: 247, loss 52.058022, acc 0.160000 current count 8
+Epoch 1, 248, global step: 248, loss 52.233913, acc 0.140000 current count 7
+Epoch 1, 249, global step: 249, loss 51.936260, acc 0.140000 current count 7
+Epoch 1, 250, global step: 250, loss 52.352859, acc 0.080000 current count 4
+Eval 1, 250, global step:250, acc 0.126000 current count 63, all count 500
+Save model, this step acc: 0.126000, last step acc: 0.120000
+Epoch 1, 251, global step: 251, loss 51.859146, acc 0.180000 current count 9
+Epoch 1, 252, global step: 252, loss 51.948025, acc 0.160000 current count 8
+Epoch 1, 253, global step: 253, loss 52.229607, acc 0.080000 current count 4
+Epoch 1, 254, global step: 254, loss 52.171402, acc 0.140000 current count 7
+Epoch 1, 255, global step: 255, loss 52.326050, acc 0.180000 current count 9
+Epoch 1, 256, global step: 256, loss 52.399185, acc 0.120000 current count 6
+Epoch 1, 257, global step: 257, loss 52.199436, acc 0.080000 current count 4
+Epoch 1, 258, global step: 258, loss 52.431053, acc 0.100000 current count 5
+Epoch 1, 259, global step: 259, loss 51.703636, acc 0.240000 current count 12
+Epoch 1, 260, global step: 260, loss 52.136742, acc 0.100000 current count 5
+Epoch 2, 1, global step: 261, loss 52.213345, acc 0.060000 current count 3WARNING:tensorflow:From hinton_kd.py:384: softmax_cross_entropy_with_logits (from tensorflow.python.ops.nn_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+
+Future major versions of TensorFlow will allow gradients to flow
+into the labels input on backprop by default.
+
+See @{tf.nn.softmax_cross_entropy_with_logits_v2}.
+
+WARNING:tensorflow:From hinton_kd.py:250: all_variables (from tensorflow.python.ops.variables) is deprecated and will be removed after 2017-03-02.
+Instructions for updating:
+Please use tf.global_variables instead.
+2019-03-15 02:59:15.318400: I tensorflow/core/platform/cpu_feature_guard.cc:141] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2019-03-15 02:59:15.756915: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1405] Found device 0 with properties: 
+name: GeForce GTX 1080 Ti major: 6 minor: 1 memoryClockRate(GHz): 1.607
+pciBusID: 0000:02:00.0
+totalMemory: 10.92GiB freeMemory: 10.76GiB
+2019-03-15 02:59:15.756974: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1484] Adding visible gpu devices: 0
+2019-03-15 02:59:16.210441: I tensorflow/core/common_runtime/gpu/gpu_device.cc:965] Device interconnect StreamExecutor with strength 1 edge matrix:
+2019-03-15 02:59:16.210509: I tensorflow/core/common_runtime/gpu/gpu_device.cc:971]      0 
+2019-03-15 02:59:16.210525: I tensorflow/core/common_runtime/gpu/gpu_device.cc:984] 0:   N 
+2019-03-15 02:59:16.212244: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1097] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 10409 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080 Ti, pci bus id: 0000:02:00.0, compute capability: 6.1)
+INFO:tensorflow:Restoring parameters from /docker_data/out/teacher/out/model.ckpt-12149
+Config Done.
+(50, 10)
+Load and Preprocess Training Data Done.
+Load and Preprocess Validation Data Done.
+network_fn is :
+ <function vgg_16 at 0x7f73dbe5be18>
+network_fn is :
+ <function vgg_16 at 0x7f73dbe5bd90>
+Set Loss Done.
+Set Optimization Done.
+175670407
+None
+Definate Network and Load Teacher Model Done
+Variable:0
+vgg_16/conv1/conv1_1/weights:0
+vgg_16/conv1/conv1_1/biases:0
+vgg_16/conv1/conv1_2/weights:0
+vgg_16/conv1/conv1_2/biases:0
+vgg_16/conv2/conv2_1/weights:0
+vgg_16/conv2/conv2_1/biases:0
+vgg_16/conv2/conv2_2/weights:0
+vgg_16/conv2/conv2_2/biases:0
+vgg_16/conv3/conv3_1/weights:0
+vgg_16/conv3/conv3_1/biases:0
+vgg_16/conv3/conv3_2/weights:0
+vgg_16/conv3/conv3_2/biases:0
+vgg_16/conv3/conv3_3/weights:0
+vgg_16/conv3/conv3_3/biases:0
+vgg_16/conv4/conv4_1/weights:0
+vgg_16/conv4/conv4_1/biases:0
+vgg_16/conv4/conv4_2/weights:0
+vgg_16/conv4/conv4_2/biases:0
+vgg_16/conv4/conv4_3/weights:0
+vgg_16/conv4/conv4_3/biases:0
+vgg_16/conv5/conv5_1/weights:0
+vgg_16/conv5/conv5_1/biases:0
+vgg_16/conv5/conv5_2/weights:0
+vgg_16/conv5/conv5_2/biases:0
+vgg_16/conv5/conv5_3/weights:0
+vgg_16/conv5/conv5_3/biases:0
+vgg_16/fc6/weights:0
+vgg_16/fc6/biases:0
+vgg_16/fc7/weights:0
+vgg_16/fc7/biases:0
+vgg_16/fc8/weights:0
+vgg_16/fc8/biases:0
+vgg_16_stu/conv1/conv1_1/weights:0
+vgg_16_stu/conv1/conv1_1/biases:0
+vgg_16_stu/conv1/conv1_2/weights:0
+vgg_16_stu/conv1/conv1_2/biases:0
+vgg_16_stu/conv2/conv2_1/weights:0
+vgg_16_stu/conv2/conv2_1/biases:0
+vgg_16_stu/conv2/conv2_2/weights:0
+vgg_16_stu/conv2/conv2_2/biases:0
+vgg_16_stu/conv3/conv3_1/weights:0
+vgg_16_stu/conv3/conv3_1/biases:0
+vgg_16_stu/conv3/conv3_2/weights:0
+vgg_16_stu/conv3/conv3_2/biases:0
+vgg_16_stu/conv3/conv3_3/weights:0
+vgg_16_stu/conv3/conv3_3/biases:0
+vgg_16_stu/conv4/conv4_1/weights:0
+vgg_16_stu/conv4/conv4_1/biases:0
+vgg_16_stu/conv4/conv4_2/weights:0
+vgg_16_stu/conv4/conv4_2/biases:0
+vgg_16_stu/conv4/conv4_3/weights:0
+vgg_16_stu/conv4/conv4_3/biases:0
+vgg_16_stu/fc6/weights:0
+vgg_16_stu/fc6/biases:0
+vgg_16_stu/fc7/weights:0
+vgg_16_stu/fc7/biases:0
+vgg_16_stu/fc8/weights:0
+vgg_16_stu/fc8/biases:0
+beta1_power:0
+beta2_power:0
+vgg_16_stu/conv1/conv1_1/weights/Adam:0
+vgg_16_stu/conv1/conv1_1/weights/Adam_1:0
+vgg_16_stu/conv1/conv1_1/biases/Adam:0
+vgg_16_stu/conv1/conv1_1/biases/Adam_1:0
+vgg_16_stu/conv1/conv1_2/weights/Adam:0
+vgg_16_stu/conv1/conv1_2/weights/Adam_1:0
+vgg_16_stu/conv1/conv1_2/biases/Adam:0
+vgg_16_stu/conv1/conv1_2/biases/Adam_1:0
+vgg_16_stu/conv2/conv2_1/weights/Adam:0
+vgg_16_stu/conv2/conv2_1/weights/Adam_1:0
+vgg_16_stu/conv2/conv2_1/biases/Adam:0
+vgg_16_stu/conv2/conv2_1/biases/Adam_1:0
+vgg_16_stu/conv2/conv2_2/weights/Adam:0
+vgg_16_stu/conv2/conv2_2/weights/Adam_1:0
+vgg_16_stu/conv2/conv2_2/biases/Adam:0
+vgg_16_stu/conv2/conv2_2/biases/Adam_1:0
+vgg_16_stu/conv3/conv3_1/weights/Adam:0
+vgg_16_stu/conv3/conv3_1/weights/Adam_1:0
+vgg_16_stu/conv3/conv3_1/biases/Adam:0
+vgg_16_stu/conv3/conv3_1/biases/Adam_1:0
+vgg_16_stu/conv3/conv3_2/weights/Adam:0
+vgg_16_stu/conv3/conv3_2/weights/Adam_1:0
+vgg_16_stu/conv3/conv3_2/biases/Adam:0
+vgg_16_stu/conv3/conv3_2/biases/Adam_1:0
+vgg_16_stu/conv3/conv3_3/weights/Adam:0
+vgg_16_stu/conv3/conv3_3/weights/Adam_1:0
+vgg_16_stu/conv3/conv3_3/biases/Adam:0
+vgg_16_stu/conv3/conv3_3/biases/Adam_1:0
+vgg_16_stu/conv4/conv4_1/weights/Adam:0
+vgg_16_stu/conv4/conv4_1/weights/Adam_1:0
+vgg_16_stu/conv4/conv4_1/biases/Adam:0
+vgg_16_stu/conv4/conv4_1/biases/Adam_1:0
+vgg_16_stu/conv4/conv4_2/weights/Adam:0
+vgg_16_stu/conv4/conv4_2/weights/Adam_1:0
+vgg_16_stu/conv4/conv4_2/biases/Adam:0
+vgg_16_stu/conv4/conv4_2/biases/Adam_1:0
+vgg_16_stu/conv4/conv4_3/weights/Adam:0
+vgg_16_stu/conv4/conv4_3/weights/Adam_1:0
+vgg_16_stu/conv4/conv4_3/biases/Adam:0
+vgg_16_stu/conv4/conv4_3/biases/Adam_1:0
+vgg_16_stu/fc6/weights/Adam:0
+vgg_16_stu/fc6/weights/Adam_1:0
+vgg_16_stu/fc6/biases/Adam:0
+vgg_16_stu/fc6/biases/Adam_1:0
+vgg_16_stu/fc7/weights/Adam:0
+vgg_16_stu/fc7/weights/Adam_1:0
+vgg_16_stu/fc7/biases/Adam:0
+vgg_16_stu/fc7/biases/Adam_1:0
+vgg_16_stu/fc8/weights/Adam:0
+vgg_16_stu/fc8/weights/Adam_1:0
+vgg_16_stu/fc8/biases/Adam:0
+vgg_16_stu/fc8/biases/Adam_1:0
+Start Training
+Epoch 1, 1, global step: 1, loss 52.464981, acc 0.120000 current count 6
+Epoch 1, 2, global step: 2, loss 53.150360, acc 0.120000 current count 6
+Epoch 1, 3, global step: 3, loss 52.689156, acc 0.160000 current count 8
+Epoch 1, 4, global step: 4, loss 53.949314, acc 0.100000 current count 5
+Epoch 1, 5, global step: 5, loss 54.387466, acc 0.080000 current count 4
+Epoch 1, 6, global step: 6, loss 53.747505, acc 0.020000 current count 1
+Epoch 1, 7, global step: 7, loss 53.191143, acc 0.100000 current count 5
+Epoch 1, 8, global step: 8, loss 53.244080, acc 0.140000 current count 7
+Epoch 1, 9, global step: 9, loss 52.375923, acc 0.140000 current count 7
+Epoch 1, 10, global step: 10, loss 52.893051, acc 0.120000 current count 6
+Epoch 1, 11, global step: 11, loss 53.952850, acc 0.020000 current count 1
+Epoch 1, 12, global step: 12, loss 52.145515, acc 0.160000 current count 8
+Epoch 1, 13, global step: 13, loss 53.394848, acc 0.080000 current count 4
+Epoch 1, 14, global step: 14, loss 53.487373, acc 0.140000 current count 7
+Epoch 1, 15, global step: 15, loss 53.347118, acc 0.100000 current count 5
+Epoch 1, 16, global step: 16, loss 53.192417, acc 0.060000 current count 3
+Epoch 1, 17, global step: 17, loss 52.771053, acc 0.220000 current count 11
+Epoch 1, 18, global step: 18, loss 53.006783, acc 0.080000 current count 4
+Epoch 1, 19, global step: 19, loss 54.108624, acc 0.060000 current count 3
+Epoch 1, 20, global step: 20, loss 53.158997, acc 0.060000 current count 3
+Epoch 1, 21, global step: 21, loss 52.739632, acc 0.120000 current count 6
+Epoch 1, 22, global step: 22, loss 53.315178, acc 0.120000 current count 6
+Epoch 1, 23, global step: 23, loss 53.585342, acc 0.160000 current count 8
+Epoch 1, 24, global step: 24, loss 53.140274, acc 0.060000 current count 3
+Epoch 1, 25, global step: 25, loss 52.864452, acc 0.140000 current count 7
+Epoch 1, 26, global step: 26, loss 53.188530, acc 0.100000 current count 5
+Epoch 1, 27, global step: 27, loss 53.787910, acc 0.100000 current count 5
+Epoch 1, 28, global step: 28, loss 52.439190, acc 0.100000 current count 5
+Epoch 1, 29, global step: 29, loss 52.999500, acc 0.020000 current count 1
+Epoch 1, 30, global step: 30, loss 53.272766, acc 0.040000 current count 2
+Epoch 1, 31, global step: 31, loss 52.643730, acc 0.080000 current count 4
+Epoch 1, 32, global step: 32, loss 51.773632, acc 0.100000 current count 5
+Epoch 1, 33, global step: 33, loss 53.433907, acc 0.040000 current count 2
+Epoch 1, 34, global step: 34, loss 53.281990, acc 0.080000 current count 4
+Epoch 1, 35, global step: 35, loss 52.663376, acc 0.200000 current count 10
+Epoch 1, 36, global step: 36, loss 52.551895, acc 0.120000 current count 6
+Epoch 1, 37, global step: 37, loss 52.393188, acc 0.120000 current count 6
+Epoch 1, 38, global step: 38, loss 52.872864, acc 0.160000 current count 8
+Epoch 1, 39, global step: 39, loss 52.762939, acc 0.100000 current count 5
+Epoch 1, 40, global step: 40, loss 52.856403, acc 0.140000 current count 7
+Epoch 1, 41, global step: 41, loss 52.782028, acc 0.120000 current count 6
+Epoch 1, 42, global step: 42, loss 52.502377, acc 0.080000 current count 4
+Epoch 1, 43, global step: 43, loss 52.340008, acc 0.220000 current count 11
+Epoch 1, 44, global step: 44, loss 52.537659, acc 0.120000 current count 6
+Epoch 1, 45, global step: 45, loss 51.513515, acc 0.120000 current count 6
+Epoch 1, 46, global step: 46, loss 52.897015, acc 0.120000 current count 6
+Epoch 1, 47, global step: 47, loss 52.568951, acc 0.080000 current count 4
+Epoch 1, 48, global step: 48, loss 52.909721, acc 0.120000 current count 6
+Epoch 1, 49, global step: 49, loss 52.375984, acc 0.040000 current count 2
+Epoch 1, 50, global step: 50, loss 52.799873, acc 0.080000 current count 4
+Eval 1, 50, global step:50, acc 0.114000 current count 57, all count 500
+Save model, this step acc: 0.114000, last step acc: 0.000000
+Epoch 1, 51, global step: 51, loss 53.199940, acc 0.060000 current count 3
+Epoch 1, 52, global step: 52, loss 52.382282, acc 0.120000 current count 6
+Epoch 1, 53, global step: 53, loss 52.673218, acc 0.080000 current count 4
+Epoch 1, 54, global step: 54, loss 52.318550, acc 0.100000 current count 5
+Epoch 1, 55, global step: 55, loss 52.723648, acc 0.100000 current count 5
+Epoch 1, 56, global step: 56, loss 52.631229, acc 0.080000 current count 4
+Epoch 1, 57, global step: 57, loss 52.526814, acc 0.160000 current count 8
+Epoch 1, 58, global step: 58, loss 52.089714, acc 0.060000 current count 3
+Epoch 1, 59, global step: 59, loss 52.869244, acc 0.060000 current count 3
+Epoch 1, 60, global step: 60, loss 52.507828, acc 0.060000 current count 3
+Epoch 1, 61, global step: 61, loss 52.108139, acc 0.100000 current count 5
+Epoch 1, 62, global step: 62, loss 52.339382, acc 0.080000 current count 4
+Epoch 1, 63, global step: 63, loss 52.772507, acc 0.120000 current count 6
+Epoch 1, 64, global step: 64, loss 52.308037, acc 0.140000 current count 7
+Epoch 1, 65, global step: 65, loss 51.848843, acc 0.160000 current count 8
+Epoch 1, 66, global step: 66, loss 52.023994, acc 0.140000 current count 7
+Epoch 1, 67, global step: 67, loss 52.378487, acc 0.060000 current count 3
+Epoch 1, 68, global step: 68, loss 52.828671, acc 0.120000 current count 6
+Epoch 1, 69, global step: 69, loss 52.146866, acc 0.120000 current count 6
+Epoch 1, 70, global step: 70, loss 52.500317, acc 0.040000 current count 2
+Epoch 1, 71, global step: 71, loss 52.834629, acc 0.040000 current count 2
+Epoch 1, 72, global step: 72, loss 52.443867, acc 0.040000 current count 2
+Epoch 1, 73, global step: 73, loss 52.774384, acc 0.080000 current count 4
+Epoch 1, 74, global step: 74, loss 52.740173, acc 0.040000 current count 2
+Epoch 1, 75, global step: 75, loss 52.445366, acc 0.040000 current count 2
+Epoch 1, 76, global step: 76, loss 51.653999, acc 0.140000 current count 7
+Epoch 1, 77, global step: 77, loss 52.056778, acc 0.120000 current count 6
+Epoch 1, 78, global step: 78, loss 52.069885, acc 0.080000 current count 4
+Epoch 1, 79, global step: 79, loss 52.886448, acc 0.060000 current count 3
+Epoch 1, 80, global step: 80, loss 52.204819, acc 0.100000 current count 5
+Epoch 1, 81, global step: 81, loss 52.964981, acc 0.060000 current count 3
+Epoch 1, 82, global step: 82, loss 52.378593, acc 0.140000 current count 7
+Epoch 1, 83, global step: 83, loss 52.202438, acc 0.140000 current count 7
+Epoch 1, 84, global step: 84, loss 52.839314, acc 0.080000 current count 4
+Epoch 1, 85, global step: 85, loss 52.408283, acc 0.120000 current count 6
+Epoch 1, 86, global step: 86, loss 52.567440, acc 0.060000 current count 3
+Epoch 1, 87, global step: 87, loss 52.398064, acc 0.120000 current count 6
+Epoch 1, 88, global step: 88, loss 52.787056, acc 0.120000 current count 6
+Epoch 1, 89, global step: 89, loss 52.539829, acc 0.100000 current count 5
+Epoch 1, 90, global step: 90, loss 52.400936, acc 0.100000 current count 5
+Epoch 1, 91, global step: 91, loss 51.991848, acc 0.120000 current count 6
+Epoch 1, 92, global step: 92, loss 52.611809, acc 0.040000 current count 2
+Epoch 1, 93, global step: 93, loss 52.442402, acc 0.120000 current count 6
+Epoch 1, 94, global step: 94, loss 52.468163, acc 0.100000 current count 5
+Epoch 1, 95, global step: 95, loss 52.474091, acc 0.080000 current count 4
+Epoch 1, 96, global step: 96, loss 52.553825, acc 0.100000 current count 5
+Epoch 1, 97, global step: 97, loss 52.251377, acc 0.040000 current count 2
+Epoch 1, 98, global step: 98, loss 52.136913, acc 0.160000 current count 8
+Epoch 1, 99, global step: 99, loss 52.258057, acc 0.100000 current count 5
+Epoch 1, 100, global step: 100, loss 52.375034, acc 0.180000 current count 9
+Eval 1, 100, global step:100, acc 0.118000 current count 59, all count 500
+Save model, this step acc: 0.118000, last step acc: 0.114000
+Epoch 1, 101, global step: 101, loss 52.106697, acc 0.100000 current count 5
+Epoch 1, 102, global step: 102, loss 51.840813, acc 0.120000 current count 6
+Epoch 1, 103, global step: 103, loss 52.305740, acc 0.140000 current count 7
+Epoch 1, 104, global step: 104, loss 52.380814, acc 0.080000 current count 4
+Epoch 1, 105, global step: 105, loss 52.284706, acc 0.060000 current count 3
+Epoch 1, 106, global step: 106, loss 52.275307, acc 0.140000 current count 7
+Epoch 1, 107, global step: 107, loss 51.979328, acc 0.100000 current count 5
+Epoch 1, 108, global step: 108, loss 52.427578, acc 0.140000 current count 7
+Epoch 1, 109, global step: 109, loss 51.820488, acc 0.120000 current count 6
+Epoch 1, 110, global step: 110, loss 52.449722, acc 0.100000 current count 5
+Epoch 1, 111, global step: 111, loss 52.193272, acc 0.160000 current count 8
+Epoch 1, 112, global step: 112, loss 52.219852, acc 0.100000 current count 5
+Epoch 1, 113, global step: 113, loss 52.333626, acc 0.080000 current count 4
+Epoch 1, 114, global step: 114, loss 52.130444, acc 0.080000 current count 4
+Epoch 1, 115, global step: 115, loss 52.449165, acc 0.120000 current count 6
+Epoch 1, 116, global step: 116, loss 52.286415, acc 0.060000 current count 3
+Epoch 1, 117, global step: 117, loss 52.406296, acc 0.020000 current count 1
+Epoch 1, 118, global step: 118, loss 52.885174, acc 0.060000 current count 3
+Epoch 1, 119, global step: 119, loss 52.599991, acc 0.080000 current count 4
+Epoch 1, 120, global step: 120, loss 52.208530, acc 0.240000 current count 12
+Epoch 1, 121, global step: 121, loss 52.328754, acc 0.120000 current count 6
+Epoch 1, 122, global step: 122, loss 52.378887, acc 0.140000 current count 7
+Epoch 1, 123, global step: 123, loss 52.137669, acc 0.080000 current count 4
+Epoch 1, 124, global step: 124, loss 52.107494, acc 0.140000 current count 7
+Epoch 1, 125, global step: 125, loss 51.985703, acc 0.160000 current count 8
+Epoch 1, 126, global step: 126, loss 52.094448, acc 0.160000 current count 8
+Epoch 1, 127, global step: 127, loss 52.297649, acc 0.120000 current count 6
+Epoch 1, 128, global step: 128, loss 51.963715, acc 0.080000 current count 4
+Epoch 1, 129, global step: 129, loss 51.546616, acc 0.180000 current count 9
+Epoch 1, 130, global step: 130, loss 52.202152, acc 0.120000 current count 6
+Epoch 1, 131, global step: 131, loss 52.096149, acc 0.080000 current count 4
+Epoch 1, 132, global step: 132, loss 52.422966, acc 0.120000 current count 6
+Epoch 1, 133, global step: 133, loss 52.164177, acc 0.080000 current count 4
+Epoch 1, 134, global step: 134, loss 52.594646, acc 0.080000 current count 4
+Epoch 1, 135, global step: 135, loss 51.619125, acc 0.180000 current count 9
+Epoch 1, 136, global step: 136, loss 52.244282, acc 0.100000 current count 5
+Epoch 1, 137, global step: 137, loss 52.102409, acc 0.160000 current count 8
+Epoch 1, 138, global step: 138, loss 51.905029, acc 0.180000 current count 9
+Epoch 1, 139, global step: 139, loss 52.536053, acc 0.060000 current count 3
+Epoch 1, 140, global step: 140, loss 52.057022, acc 0.140000 current count 7
+Epoch 1, 141, global step: 141, loss 52.577496, acc 0.040000 current count 2
+Epoch 1, 142, global step: 142, loss 51.856258, acc 0.220000 current count 11
+Epoch 1, 143, global step: 143, loss 52.040359, acc 0.140000 current count 7
+Epoch 1, 144, global step: 144, loss 52.461704, acc 0.120000 current count 6
+Epoch 1, 145, global step: 145, loss 52.605061, acc 0.120000 current count 6
+Epoch 1, 146, global step: 146, loss 52.382812, acc 0.040000 current count 2
+Epoch 1, 147, global step: 147, loss 51.997494, acc 0.100000 current count 5
+Epoch 1, 148, global step: 148, loss 52.135750, acc 0.200000 current count 10
+Epoch 1, 149, global step: 149, loss 52.596596, acc 0.060000 current count 3
+Epoch 1, 150, global step: 150, loss 52.217991, acc 0.080000 current count 4
+Eval 1, 150, global step:150, acc 0.128000 current count 64, all count 500
+Save model, this step acc: 0.128000, last step acc: 0.118000
+Epoch 1, 151, global step: 151, loss 52.498871, acc 0.060000 current count 3
+Epoch 1, 152, global step: 152, loss 52.402157, acc 0.060000 current count 3
+Epoch 1, 153, global step: 153, loss 52.433121, acc 0.120000 current count 6
+Epoch 1, 154, global step: 154, loss 51.972771, acc 0.140000 current count 7
+Epoch 1, 155, global step: 155, loss 52.866039, acc 0.040000 current count 2
+Epoch 1, 156, global step: 156, loss 52.786243, acc 0.180000 current count 9
+Epoch 1, 157, global step: 157, loss 52.290806, acc 0.080000 current count 4
+Epoch 1, 158, global step: 158, loss 52.534359, acc 0.060000 current count 3
+Epoch 1, 159, global step: 159, loss 51.834496, acc 0.200000 current count 10
+Epoch 1, 160, global step: 160, loss 51.853531, acc 0.140000 current count 7
+Epoch 1, 161, global step: 161, loss 52.145081, acc 0.140000 current count 7
+Epoch 1, 162, global step: 162, loss 51.971760, acc 0.140000 current count 7
+Epoch 1, 163, global step: 163, loss 52.080036, acc 0.140000 current count 7
+Epoch 1, 164, global step: 164, loss 52.338825, acc 0.040000 current count 2
+Epoch 1, 165, global step: 165, loss 52.290020, acc 0.060000 current count 3
+Epoch 1, 166, global step: 166, loss 52.580551, acc 0.060000 current count 3
+Epoch 1, 167, global step: 167, loss 52.224148, acc 0.060000 current count 3
+Epoch 1, 168, global step: 168, loss 52.192104, acc 0.220000 current count 11
+Epoch 1, 169, global step: 169, loss 51.869900, acc 0.200000 current count 10
+Epoch 1, 170, global step: 170, loss 52.130806, acc 0.160000 current count 8
+Epoch 1, 171, global step: 171, loss 51.471050, acc 0.220000 current count 11
+Epoch 1, 172, global step: 172, loss 52.042339, acc 0.020000 current count 1
+Epoch 1, 173, global step: 173, loss 52.265583, acc 0.120000 current count 6
+Epoch 1, 174, global step: 174, loss 52.518353, acc 0.120000 current count 6
+Epoch 1, 175, global step: 175, loss 52.107571, acc 0.120000 current count 6
+Epoch 1, 176, global step: 176, loss 52.519554, acc 0.080000 current count 4
+Epoch 1, 177, global step: 177, loss 52.443150, acc 0.040000 current count 2
+Epoch 1, 178, global step: 178, loss 52.190598, acc 0.160000 current count 8
+Epoch 1, 179, global step: 179, loss 52.084633, acc 0.140000 current count 7
+Epoch 1, 180, global step: 180, loss 52.458408, acc 0.080000 current count 4
+Epoch 1, 181, global step: 181, loss 52.172581, acc 0.100000 current count 5
+Epoch 1, 182, global step: 182, loss 51.894680, acc 0.120000 current count 6
+Epoch 1, 183, global step: 183, loss 52.500610, acc 0.060000 current count 3
+Epoch 1, 184, global step: 184, loss 52.327854, acc 0.100000 current count 5
+Epoch 1, 185, global step: 185, loss 52.411854, acc 0.000000 current count 0
+Epoch 1, 186, global step: 186, loss 52.170567, acc 0.120000 current count 6
+Epoch 1, 187, global step: 187, loss 52.443455, acc 0.040000 current count 2
+Epoch 1, 188, global step: 188, loss 52.471931, acc 0.020000 current count 1
+Epoch 1, 189, global step: 189, loss 52.403713, acc 0.100000 current count 5
+Epoch 1, 190, global step: 190, loss 51.954670, acc 0.120000 current count 6
+Epoch 1, 191, global step: 191, loss 52.515739, acc 0.080000 current count 4
+Epoch 1, 192, global step: 192, loss 51.781418, acc 0.120000 current count 6
+Epoch 1, 193, global step: 193, loss 52.409344, acc 0.060000 current count 3
+Epoch 1, 194, global step: 194, loss 51.878155, acc 0.200000 current count 10
+Epoch 1, 195, global step: 195, loss 52.366604, acc 0.120000 current count 6
+Epoch 1, 196, global step: 196, loss 51.966125, acc 0.180000 current count 9
+Epoch 1, 197, global step: 197, loss 52.225399, acc 0.160000 current count 8
+Epoch 1, 198, global step: 198, loss 51.919327, acc 0.160000 current count 8
+Epoch 1, 199, global step: 199, loss 51.942997, acc 0.200000 current count 10
+Epoch 1, 200, global step: 200, loss 52.132339, acc 0.120000 current count 6
+Eval 1, 200, global step:200, acc 0.118000 current count 59, all count 500
+Epoch 1, 201, global step: 201, loss 52.159447, acc 0.140000 current count 7
+Epoch 1, 202, global step: 202, loss 51.784657, acc 0.140000 current count 7
+Epoch 1, 203, global step: 203, loss 52.268101, acc 0.080000 current count 4
+Epoch 1, 204, global step: 204, loss 52.513985, acc 0.140000 current count 7
+Epoch 1, 205, global step: 205, loss 51.699234, acc 0.120000 current count 6
+Epoch 1, 206, global step: 206, loss 52.464447, acc 0.180000 current count 9
+Epoch 1, 207, global step: 207, loss 52.280594, acc 0.100000 current count 5
+Epoch 1, 208, global step: 208, loss 52.467800, acc 0.120000 current count 6
+Epoch 1, 209, global step: 209, loss 52.341644, acc 0.100000 current count 5
+Epoch 1, 210, global step: 210, loss 52.429070, acc 0.140000 current count 7
+Epoch 1, 211, global step: 211, loss 52.071709, acc 0.160000 current count 8
+Epoch 1, 212, global step: 212, loss 52.148315, acc 0.080000 current count 4
+Epoch 1, 213, global step: 213, loss 51.863907, acc 0.100000 current count 5
+Epoch 1, 214, global step: 214, loss 52.424496, acc 0.080000 current count 4
+Epoch 1, 215, global step: 215, loss 52.017151, acc 0.220000 current count 11
+Epoch 1, 216, global step: 216, loss 52.202774, acc 0.100000 current count 5
+Epoch 1, 217, global step: 217, loss 52.030090, acc 0.120000 current count 6
+Epoch 1, 218, global step: 218, loss 51.821960, acc 0.160000 current count 8
+Epoch 1, 219, global step: 219, loss 52.527718, acc 0.120000 current count 6
+Epoch 1, 220, global step: 220, loss 52.024887, acc 0.180000 current count 9
+Epoch 1, 221, global step: 221, loss 52.020306, acc 0.060000 current count 3
+Epoch 1, 222, global step: 222, loss 51.808807, acc 0.140000 current count 7
+Epoch 1, 223, global step: 223, loss 52.180069, acc 0.140000 current count 7
+Epoch 1, 224, global step: 224, loss 52.426678, acc 0.020000 current count 1
+Epoch 1, 225, global step: 225, loss 52.224720, acc 0.120000 current count 6
+Epoch 1, 226, global step: 226, loss 52.091965, acc 0.140000 current count 7
+Epoch 1, 227, global step: 227, loss 52.605667, acc 0.100000 current count 5
+Epoch 1, 228, global step: 228, loss 51.997776, acc 0.160000 current count 8
+Epoch 1, 229, global step: 229, loss 51.775505, acc 0.160000 current count 8
+Epoch 1, 230, global step: 230, loss 51.295464, acc 0.240000 current count 12
+Epoch 1, 231, global step: 231, loss 51.806057, acc 0.120000 current count 6
+Epoch 1, 232, global step: 232, loss 52.479774, acc 0.060000 current count 3
+Epoch 1, 233, global step: 233, loss 52.013714, acc 0.080000 current count 4
+Epoch 1, 234, global step: 234, loss 51.685928, acc 0.120000 current count 6
+Epoch 1, 235, global step: 235, loss 52.127865, acc 0.120000 current count 6
+Epoch 1, 236, global step: 236, loss 51.664795, acc 0.220000 current count 11
+Epoch 1, 237, global step: 237, loss 51.973846, acc 0.060000 current count 3
+Epoch 1, 238, global step: 238, loss 51.831360, acc 0.100000 current count 5
+Epoch 1, 239, global step: 239, loss 52.164780, acc 0.160000 current count 8
+Epoch 1, 240, global step: 240, loss 51.875229, acc 0.120000 current count 6
+Epoch 1, 241, global step: 241, loss 52.085587, acc 0.160000 current count 8
+Epoch 1, 242, global step: 242, loss 52.050282, acc 0.160000 current count 8
+Epoch 1, 243, global step: 243, loss 52.429726, acc 0.120000 current count 6
+Epoch 1, 244, global step: 244, loss 52.454487, acc 0.100000 current count 5
+Epoch 1, 245, global step: 245, loss 52.516045, acc 0.060000 current count 3
+Epoch 1, 246, global step: 246, loss 51.857983, acc 0.140000 current count 7
+Epoch 1, 247, global step: 247, loss 53.107815, acc 0.040000 current count 2
+Epoch 1, 248, global step: 248, loss 52.204746, acc 0.140000 current count 7
+Epoch 1, 249, global step: 249, loss 52.300484, acc 0.120000 current count 6
+Epoch 1, 250, global step: 250, loss 51.909721, acc 0.100000 current count 5
+Eval 1, 250, global step:250, acc 0.128000 current count 64, all count 500
+Epoch 1, 251, global step: 251, loss 52.395508, acc 0.020000 current count 1
+Epoch 1, 252, global step: 252, loss 52.410202, acc 0.100000 current count 5
+Epoch 1, 253, global step: 253, loss 51.870651, acc 0.140000 current count 7
+Epoch 1, 254, global step: 254, loss 51.610271, acc 0.260000 current count 13
+Epoch 1, 255, global step: 255, loss 52.601631, acc 0.060000 current count 3
+Epoch 1, 256, global step: 256, loss 52.611580, acc 0.160000 current count 8
+Epoch 1, 257, global step: 257, loss 51.330727, acc 0.260000 current count 13
+Epoch 1, 258, global step: 258, loss 52.259399, acc 0.160000 current count 8
+Epoch 1, 259, global step: 259, loss 52.335316, acc 0.100000 current count 5
+Epoch 1, 260, global step: 260, loss 52.447372, acc 0.080000 current count 4
+Epoch 2, 1, global step: 261, loss 52.114773, acc 0.080000 current count 4
+Epoch 2, 2, global step: 262, loss 52.087158, acc 0.100000 current count 5
+Epoch 2, 3, global step: 263, loss 52.061459, acc 0.100000 current count 5
+Epoch 2, 4, global step: 264, loss 52.182236, acc 0.160000 current count 8
+Epoch 2, 5, global step: 265, loss 52.103832, acc 0.160000 current count 8
+Epoch 2, 6, global step: 266, loss 51.646614, acc 0.180000 current count 9
+Epoch 2, 7, global step: 267, loss 52.371773, acc 0.060000 current count 3
+Epoch 2, 8, global step: 268, loss 52.020718, acc 0.140000 current count 7
+Epoch 2, 9, global step: 269, loss 52.237366, acc 0.120000 current count 6
+Epoch 2, 10, global step: 270, loss 52.050415, acc 0.140000 current count 7
+Epoch 2, 11, global step: 271, loss 52.278580, acc 0.060000 current count 3
+Epoch 2, 12, global step: 272, loss 52.392666, acc 0.100000 current count 5
+Epoch 2, 13, global step: 273, loss 52.131653, acc 0.140000 current count 7
+Epoch 2, 14, global step: 274, loss 52.392685, acc 0.120000 current count 6
+Epoch 2, 15, global step: 275, loss 52.067059, acc 0.100000 current count 5
+Epoch 2, 16, global step: 276, loss 52.106716, acc 0.160000 current count 8
+Epoch 2, 17, global step: 277, loss 52.418755, acc 0.040000 current count 2
+Epoch 2, 18, global step: 278, loss 51.800251, acc 0.160000 current count 8
+Epoch 2, 19, global step: 279, loss 52.255852, acc 0.080000 current count 4
+Epoch 2, 20, global step: 280, loss 52.196175, acc 0.060000 current count 3
+Epoch 2, 21, global step: 281, loss 52.143017, acc 0.180000 current count 9
+Epoch 2, 22, global step: 282, loss 52.026127, acc 0.160000 current count 8
+Epoch 2, 23, global step: 283, loss 52.331985, acc 0.100000 current count 5
+Epoch 2, 24, global step: 284, loss 52.408070, acc 0.040000 current count 2
+Epoch 2, 25, global step: 285, loss 52.362904, acc 0.100000 current count 5
+Epoch 2, 26, global step: 286, loss 51.997108, acc 0.100000 current count 5
+Epoch 2, 27, global step: 287, loss 52.272850, acc 0.120000 current count 6
+Epoch 2, 28, global step: 288, loss 52.270184, acc 0.120000 current count 6
+Epoch 2, 29, global step: 289, loss 52.649632, acc 0.100000 current count 5
+Epoch 2, 30, global step: 290, loss 52.012737, acc 0.160000 current count 8
+Epoch 2, 31, global step: 291, loss 52.813923, acc 0.040000 current count 2
+Epoch 2, 32, global step: 292, loss 51.313290, acc 0.160000 current count 8
+Epoch 2, 33, global step: 293, loss 51.694878, acc 0.120000 current count 6
+Epoch 2, 34, global step: 294, loss 52.546143, acc 0.140000 current count 7
+Epoch 2, 35, global step: 295, loss 51.975853, acc 0.200000 current count 10
+Epoch 2, 36, global step: 296, loss 51.966213, acc 0.080000 current count 4
+Epoch 2, 37, global step: 297, loss 52.360031, acc 0.100000 current count 5
+Epoch 2, 38, global step: 298, loss 52.123135, acc 0.140000 current count 7
+Epoch 2, 39, global step: 299, loss 52.155411, acc 0.120000 current count 6
+Epoch 2, 40, global step: 300, loss 52.504189, acc 0.080000 current count 4
+Eval 2, 40, global step:300, acc 0.130000 current count 65, all count 500
+Save model, this step acc: 0.130000, last step acc: 0.128000
+Epoch 2, 41, global step: 301, loss 51.940186, acc 0.180000 current count 9
+Epoch 2, 42, global step: 302, loss 51.900791, acc 0.180000 current count 9
+Epoch 2, 43, global step: 303, loss 51.774460, acc 0.200000 current count 10
+Epoch 2, 44, global step: 304, loss 51.940178, acc 0.160000 current count 8
+Epoch 2, 45, global step: 305, loss 52.019466, acc 0.140000 current count 7
+Epoch 2, 46, global step: 306, loss 51.808701, acc 0.180000 current count 9
+Epoch 2, 47, global step: 307, loss 52.645267, acc 0.100000 current count 5
+Epoch 2, 48, global step: 308, loss 52.302925, acc 0.100000 current count 5
+Epoch 2, 49, global step: 309, loss 51.815662, acc 0.160000 current count 8
+Epoch 2, 50, global step: 310, loss 51.449993, acc 0.260000 current count 13
+Epoch 2, 51, global step: 311, loss 52.339191, acc 0.040000 current count 2
+Epoch 2, 52, global step: 312, loss 52.148891, acc 0.120000 current count 6
+Epoch 2, 53, global step: 313, loss 52.309273, acc 0.080000 current count 4
+Epoch 2, 54, global step: 314, loss 51.842300, acc 0.220000 current count 11
+Epoch 2, 55, global step: 315, loss 51.943611, acc 0.200000 current count 10
+Epoch 2, 56, global step: 316, loss 52.124565, acc 0.120000 current count 6
+Epoch 2, 57, global step: 317, loss 51.986946, acc 0.200000 current count 10
+Epoch 2, 58, global step: 318, loss 51.641499, acc 0.100000 current count 5
+Epoch 2, 59, global step: 319, loss 52.328026, acc 0.080000 current count 4
+Epoch 2, 60, global step: 320, loss 52.265667, acc 0.120000 current count 6
+Epoch 2, 61, global step: 321, loss 51.663677, acc 0.260000 current count 13
+Epoch 2, 62, global step: 322, loss 52.108364, acc 0.060000 current count 3
+Epoch 2, 63, global step: 323, loss 52.310116, acc 0.100000 current count 5
+Epoch 2, 64, global step: 324, loss 52.328979, acc 0.100000 current count 5
+Epoch 2, 65, global step: 325, loss 52.031563, acc 0.100000 current count 5
+Epoch 2, 66, global step: 326, loss 52.077290, acc 0.160000 current count 8
+Epoch 2, 67, global step: 327, loss 51.660160, acc 0.200000 current count 10
+Epoch 2, 68, global step: 328, loss 52.073071, acc 0.080000 current count 4
+Epoch 2, 69, global step: 329, loss 51.747650, acc 0.080000 current count 4
+Epoch 2, 70, global step: 330, loss 51.989017, acc 0.080000 current count 4
+Epoch 2, 71, global step: 331, loss 51.934875, acc 0.120000 current count 6
+Epoch 2, 72, global step: 332, loss 52.685539, acc 0.020000 current count 1
+Epoch 2, 73, global step: 333, loss 52.585529, acc 0.080000 current count 4
+Epoch 2, 74, global step: 334, loss 51.867695, acc 0.140000 current count 7
+Epoch 2, 75, global step: 335, loss 51.780777, acc 0.120000 current count 6
+Epoch 2, 76, global step: 336, loss 51.958591, acc 0.100000 current count 5
+Epoch 2, 77, global step: 337, loss 52.370766, acc 0.080000 current count 4
+Epoch 2, 78, global step: 338, loss 52.250267, acc 0.060000 current count 3
+Epoch 2, 79, global step: 339, loss 51.586163, acc 0.180000 current count 9
+Epoch 2, 80, global step: 340, loss 52.269276, acc 0.060000 current count 3
+Epoch 2, 81, global step: 341, loss 52.222458, acc 0.160000 current count 8
+Epoch 2, 82, global step: 342, loss 52.198669, acc 0.100000 current count 5
+Epoch 2, 83, global step: 343, loss 51.781708, acc 0.200000 current count 10
+Epoch 2, 84, global step: 344, loss 52.716244, acc 0.060000 current count 3
+Epoch 2, 85, global step: 345, loss 51.861485, acc 0.100000 current count 5
+Epoch 2, 86, global step: 346, loss 51.345135, acc 0.180000 current count 9
+Epoch 2, 87, global step: 347, loss 52.420811, acc 0.060000 current count 3
+Epoch 2, 88, global step: 348, loss 52.052299, acc 0.120000 current count 6
+Epoch 2, 89, global step: 349, loss 51.846218, acc 0.140000 current count 7
+Epoch 2, 90, global step: 350, loss 52.176884, acc 0.160000 current count 8
+Eval 2, 90, global step:350, acc 0.138000 current count 69, all count 500
+Save model, this step acc: 0.138000, last step acc: 0.130000
+Epoch 2, 91, global step: 351, loss 52.070892, acc 0.100000 current count 5
+Epoch 2, 92, global step: 352, loss 52.022232, acc 0.180000 current count 9
+Epoch 2, 93, global step: 353, loss 51.973362, acc 0.140000 current count 7
+Epoch 2, 94, global step: 354, loss 52.427681, acc 0.080000 current count 4
+Epoch 2, 95, global step: 355, loss 51.930435, acc 0.120000 current count 6
+Epoch 2, 96, global step: 356, loss 52.132126, acc 0.120000 current count 6
+Epoch 2, 97, global step: 357, loss 51.751987, acc 0.220000 current count 11
+Epoch 2, 98, global step: 358, loss 51.777145, acc 0.200000 current count 10
+Epoch 2, 99, global step: 359, loss 51.666088, acc 0.200000 current count 10
+Epoch 2, 100, global step: 360, loss 52.213123, acc 0.140000 current count 7
+Epoch 2, 101, global step: 361, loss 51.615810, acc 0.080000 current count 4
+Epoch 2, 102, global step: 362, loss 52.146378, acc 0.100000 current count 5
+Epoch 2, 103, global step: 363, loss 51.128174, acc 0.200000 current count 10
+Epoch 2, 104, global step: 364, loss 51.996773, acc 0.120000 current count 6
+Epoch 2, 105, global step: 365, loss 52.233818, acc 0.160000 current count 8
+Epoch 2, 106, global step: 366, loss 52.063816, acc 0.160000 current count 8
+Epoch 2, 107, global step: 367, loss 52.471142, acc 0.080000 current count 4
+Epoch 2, 108, global step: 368, loss 51.637543, acc 0.160000 current count 8
+Epoch 2, 109, global step: 369, loss 51.598324, acc 0.140000 current count 7
+Epoch 2, 110, global step: 370, loss 51.973892, acc 0.160000 current count 8
+Epoch 2, 111, global step: 371, loss 51.956116, acc 0.140000 current count 7
+Epoch 2, 112, global step: 372, loss 52.067997, acc 0.140000 current count 7
+Epoch 2, 113, global step: 373, loss 52.353733, acc 0.080000 current count 4
+Epoch 2, 114, global step: 374, loss 52.011997, acc 0.160000 current count 8
+Epoch 2, 115, global step: 375, loss 51.469833, acc 0.140000 current count 7
+Epoch 2, 116, global step: 376, loss 52.236233, acc 0.100000 current count 5
+Epoch 2, 117, global step: 377, loss 52.182060, acc 0.140000 current count 7
+Epoch 2, 118, global step: 378, loss 52.133793, acc 0.100000 current count 5
+Epoch 2, 119, global step: 379, loss 51.968609, acc 0.120000 current count 6
+Epoch 2, 120, global step: 380, loss 52.200699, acc 0.140000 current count 7
+Epoch 2, 121, global step: 381, loss 51.743504, acc 0.220000 current count 11
+Epoch 2, 122, global step: 382, loss 52.260296, acc 0.120000 current count 6
+Epoch 2, 123, global step: 383, loss 52.347229, acc 0.100000 current count 5
+Epoch 2, 124, global step: 384, loss 51.953403, acc 0.100000 current count 5
+Epoch 2, 125, global step: 385, loss 52.037846, acc 0.140000 current count 7
+Epoch 2, 126, global step: 386, loss 51.673855, acc 0.200000 current count 10
+Epoch 2, 127, global step: 387, loss 51.642220, acc 0.120000 current count 6
+Epoch 2, 128, global step: 388, loss 52.297859, acc 0.120000 current count 6
+Epoch 2, 129, global step: 389, loss 52.466885, acc 0.040000 current count 2
+Epoch 2, 130, global step: 390, loss 51.881660, acc 0.160000 current count 8
+Epoch 2, 131, global step: 391, loss 51.706745, acc 0.140000 current count 7
+Epoch 2, 132, global step: 392, loss 51.734104, acc 0.180000 current count 9
+Epoch 2, 133, global step: 393, loss 51.798237, acc 0.080000 current count 4
+Epoch 2, 134, global step: 394, loss 51.824631, acc 0.160000 current count 8
+Epoch 2, 135, global step: 395, loss 51.634567, acc 0.140000 current count 7
+Epoch 2, 136, global step: 396, loss 52.263897, acc 0.100000 current count 5
+Epoch 2, 137, global step: 397, loss 52.456619, acc 0.120000 current count 6
+Epoch 2, 138, global step: 398, loss 51.757156, acc 0.100000 current count 5
+Epoch 2, 139, global step: 399, loss 52.511204, acc 0.120000 current count 6
+Epoch 2, 140, global step: 400, loss 51.960754, acc 0.140000 current count 7
+Eval 2, 140, global step:400, acc 0.126000 current count 63, all count 500
+Epoch 2, 141, global step: 401, loss 52.279755, acc 0.080000 current count 4
+Epoch 2, 142, global step: 402, loss 52.237141, acc 0.080000 current count 4
+Epoch 2, 143, global step: 403, loss 51.215103, acc 0.180000 current count 9
+Epoch 2, 144, global step: 404, loss 52.169670, acc 0.140000 current count 7
+Epoch 2, 145, global step: 405, loss 51.848179, acc 0.140000 current count 7
+Epoch 2, 146, global step: 406, loss 52.918301, acc 0.120000 current count 6
+Epoch 2, 147, global step: 407, loss 52.317093, acc 0.060000 current count 3
+Epoch 2, 148, global step: 408, loss 52.024841, acc 0.220000 current count 11
+Epoch 2, 149, global step: 409, loss 52.144695, acc 0.100000 current count 5
+Epoch 2, 150, global step: 410, loss 52.117054, acc 0.200000 current count 10
+Epoch 2, 151, global step: 411, loss 52.551395, acc 0.120000 current count 6
+Epoch 2, 152, global step: 412, loss 52.175068, acc 0.100000 current count 5
+Epoch 2, 153, global step: 413, loss 51.387009, acc 0.180000 current count 9
+Epoch 2, 154, global step: 414, loss 51.582645, acc 0.160000 current count 8
+Epoch 2, 155, global step: 415, loss 52.143112, acc 0.120000 current count 6
+Epoch 2, 156, global step: 416, loss 52.201828, acc 0.140000 current count 7
+Epoch 2, 157, global step: 417, loss 51.785408, acc 0.100000 current count 5
+Epoch 2, 158, global step: 418, loss 51.867069, acc 0.100000 current count 5
+Epoch 2, 159, global step: 419, loss 51.377811, acc 0.180000 current count 9
+Epoch 2, 160, global step: 420, loss 51.771545, acc 0.180000 current count 9
+Epoch 2, 161, global step: 421, loss 51.717861, acc 0.300000 current count 15
+Epoch 2, 162, global step: 422, loss 51.652401, acc 0.180000 current count 9
+Epoch 2, 163, global step: 423, loss 51.835278, acc 0.180000 current count 9
+Epoch 2, 164, global step: 424, loss 52.360840, acc 0.080000 current count 4
+Epoch 2, 165, global step: 425, loss 51.830547, acc 0.200000 current count 10
+Epoch 2, 166, global step: 426, loss 52.597446, acc 0.100000 current count 5
+Epoch 2, 167, global step: 427, loss 52.306362, acc 0.100000 current count 5
+Epoch 2, 168, global step: 428, loss 51.760429, acc 0.140000 current count 7
+Epoch 2, 169, global step: 429, loss 52.090038, acc 0.120000 current count 6
+Epoch 2, 170, global step: 430, loss 52.136414, acc 0.140000 current count 7
+Epoch 2, 171, global step: 431, loss 51.999207, acc 0.100000 current count 5
+Epoch 2, 172, global step: 432, loss 52.154400, acc 0.100000 current count 5
+Epoch 2, 173, global step: 433, loss 51.740711, acc 0.160000 current count 8
+Epoch 2, 174, global step: 434, loss 52.236229, acc 0.160000 current count 8
+Epoch 2, 175, global step: 435, loss 51.956318, acc 0.160000 current count 8
+Epoch 2, 176, global step: 436, loss 52.015503, acc 0.200000 current count 10
+Epoch 2, 177, global step: 437, loss 51.075920, acc 0.220000 current count 11
+Epoch 2, 178, global step: 438, loss 52.457821, acc 0.080000 current count 4
+Epoch 2, 179, global step: 439, loss 52.268745, acc 0.060000 current count 3
+Epoch 2, 180, global step: 440, loss 51.853085, acc 0.100000 current count 5
+Epoch 2, 181, global step: 441, loss 52.306057, acc 0.080000 current count 4
+Epoch 2, 182, global step: 442, loss 51.257481, acc 0.200000 current count 10
+Epoch 2, 183, global step: 443, loss 51.957039, acc 0.180000 current count 9
+Epoch 2, 184, global step: 444, loss 51.948521, acc 0.180000 current count 9
+Epoch 2, 185, global step: 445, loss 51.975227, acc 0.120000 current count 6
+Epoch 2, 186, global step: 446, loss 52.026878, acc 0.160000 current count 8
+Epoch 2, 187, global step: 447, loss 51.643539, acc 0.140000 current count 7
+Epoch 2, 188, global step: 448, loss 51.678024, acc 0.160000 current count 8
+Epoch 2, 189, global step: 449, loss 52.210693, acc 0.080000 current count 4
+Epoch 2, 190, global step: 450, loss 51.689922, acc 0.160000 current count 8
+Eval 2, 190, global step:450, acc 0.120000 current count 60, all count 500
+Epoch 2, 191, global step: 451, loss 51.346684, acc 0.240000 current count 12
+Epoch 2, 192, global step: 452, loss 51.939590, acc 0.180000 current count 9
+Epoch 2, 193, global step: 453, loss 51.375942, acc 0.160000 current count 8
+Epoch 2, 194, global step: 454, loss 51.873543, acc 0.180000 current count 9
+Epoch 2, 195, global step: 455, loss 52.772598, acc 0.080000 current count 4
+Epoch 2, 196, global step: 456, loss 52.104149, acc 0.160000 current count 8
+Epoch 2, 197, global step: 457, loss 51.224068, acc 0.160000 current count 8
+Epoch 2, 198, global step: 458, loss 52.180336, acc 0.140000 current count 7
+Epoch 2, 199, global step: 459, loss 52.306458, acc 0.080000 current count 4
+Epoch 2, 200, global step: 460, loss 52.252823, acc 0.100000 current count 5
+Epoch 2, 201, global step: 461, loss 51.611790, acc 0.100000 current count 5
+Epoch 2, 202, global step: 462, loss 51.762962, acc 0.160000 current count 8
+Epoch 2, 203, global step: 463, loss 51.294033, acc 0.120000 current count 6
+Epoch 2, 204, global step: 464, loss 52.286846, acc 0.140000 current count 7
+Epoch 2, 205, global step: 465, loss 52.252346, acc 0.160000 current count 8
+Epoch 2, 206, global step: 466, loss 51.078728, acc 0.260000 current count 13
+Epoch 2, 207, global step: 467, loss 51.944118, acc 0.120000 current count 6
+Epoch 2, 208, global step: 468, loss 52.387375, acc 0.100000 current count 5
+Epoch 2, 209, global step: 469, loss 51.842022, acc 0.120000 current count 6
+Epoch 2, 210, global step: 470, loss 51.796036, acc 0.160000 current count 8
+Epoch 2, 211, global step: 471, loss 52.394955, acc 0.120000 current count 6
+Epoch 2, 212, global step: 472, loss 51.016346, acc 0.100000 current count 5
+Epoch 2, 213, global step: 473, loss 52.071941, acc 0.180000 current count 9
+Epoch 2, 214, global step: 474, loss 51.240608, acc 0.180000 current count 9
+Epoch 2, 215, global step: 475, loss 51.669426, acc 0.080000 current count 4
+Epoch 2, 216, global step: 476, loss 52.021980, acc 0.120000 current count 6
+Epoch 2, 217, global step: 477, loss 51.867744, acc 0.140000 current count 7
+Epoch 2, 218, global step: 478, loss 51.838257, acc 0.160000 current count 8
+Epoch 2, 219, global step: 479, loss 52.045151, acc 0.060000 current count 3
+Epoch 2, 220, global step: 480, loss 51.643368, acc 0.180000 current count 9
+Epoch 2, 221, global step: 481, loss 51.312889, acc 0.120000 current count 6
+Epoch 2, 222, global step: 482, loss 52.336662, acc 0.080000 current count 4
+Epoch 2, 223, global step: 483, loss 52.164120, acc 0.060000 current count 3
+Epoch 2, 224, global step: 484, loss 52.442951, acc 0.120000 current count 6
+Epoch 2, 225, global step: 485, loss 52.229988, acc 0.140000 current count 7
+Epoch 2, 226, global step: 486, loss 51.578636, acc 0.140000 current count 7
+Epoch 2, 227, global step: 487, loss 52.155998, acc 0.180000 current count 9
+Epoch 2, 228, global step: 488, loss 52.272854, acc 0.100000 current count 5
+Epoch 2, 229, global step: 489, loss 52.093933, acc 0.100000 current count 5
+Epoch 2, 230, global step: 490, loss 51.937016, acc 0.140000 current count 7
+Epoch 2, 231, global step: 491, loss 51.800991, acc 0.200000 current count 10
+Epoch 2, 232, global step: 492, loss 51.147659, acc 0.200000 current count 10
+Epoch 2, 233, global step: 493, loss 51.786911, acc 0.140000 current count 7
+Epoch 2, 234, global step: 494, loss 51.564041, acc 0.160000 current count 8
+Epoch 2, 235, global step: 495, loss 51.728188, acc 0.140000 current count 7
+Epoch 2, 236, global step: 496, loss 52.237263, acc 0.160000 current count 8
+Epoch 2, 237, global step: 497, loss 51.809753, acc 0.140000 current count 7
+Epoch 2, 238, global step: 498, loss 51.946552, acc 0.060000 current count 3
+Epoch 2, 239, global step: 499, loss 51.582924, acc 0.220000 current count 11
+Epoch 2, 240, global step: 500, loss 51.507610, acc 0.220000 current count 11
+Eval 2, 240, global step:500, acc 0.132000 current count 66, all count 500
+Epoch 2, 241, global step: 501, loss 52.053467, acc 0.160000 current count 8
+Epoch 2, 242, global step: 502, loss 51.485813, acc 0.140000 current count 7
+Epoch 2, 243, global step: 503, loss 51.717152, acc 0.120000 current count 6
+Epoch 2, 244, global step: 504, loss 51.654419, acc 0.100000 current count 5
+Epoch 2, 245, global step: 505, loss 51.418869, acc 0.220000 current count 11
+Epoch 2, 246, global step: 506, loss 52.280491, acc 0.080000 current count 4
+Epoch 2, 247, global step: 507, loss 51.666977, acc 0.220000 current count 11
+Epoch 2, 248, global step: 508, loss 51.388676, acc 0.220000 current count 11
+Epoch 2, 249, global step: 509, loss 51.609680, acc 0.140000 current count 7
+Epoch 2, 250, global step: 510, loss 52.431580, acc 0.180000 current count 9
+Epoch 2, 251, global step: 511, loss 51.801113, acc 0.140000 current count 7
+Epoch 2, 252, global step: 512, loss 51.790363, acc 0.140000 current count 7
+Epoch 2, 253, global step: 513, loss 52.236507, acc 0.080000 current count 4
+Epoch 2, 254, global step: 514, loss 52.172333, acc 0.180000 current count 9
+Epoch 2, 255, global step: 515, loss 51.577141, acc 0.160000 current count 8
+Epoch 2, 256, global step: 516, loss 52.149525, acc 0.140000 current count 7
+Epoch 2, 257, global step: 517, loss 51.807190, acc 0.200000 current count 10
+Epoch 2, 258, global step: 518, loss 51.483418, acc 0.100000 current count 5
+Epoch 2, 259, global step: 519, loss 51.896976, acc 0.120000 current count 6
+Epoch 2, 260, global step: 520, loss 51.344090, acc 0.100000 current count 5
+Epoch 3, 1, global step: 521, loss 52.050362, acc 0.140000 current count 7
+Epoch 3, 2, global step: 522, loss 51.842182, acc 0.180000 current count 9
+Epoch 3, 3, global step: 523, loss 51.967190, acc 0.140000 current count 7
+Epoch 3, 4, global step: 524, loss 51.565800, acc 0.140000 current count 7
+Epoch 3, 5, global step: 525, loss 51.224682, acc 0.120000 current count 6
+Epoch 3, 6, global step: 526, loss 51.428921, acc 0.160000 current count 8
+Epoch 3, 7, global step: 527, loss 51.178905, acc 0.220000 current count 11
+Epoch 3, 8, global step: 528, loss 51.457657, acc 0.180000 current count 9
+Epoch 3, 9, global step: 529, loss 51.996117, acc 0.240000 current count 12
+Epoch 3, 10, global step: 530, loss 52.071224, acc 0.060000 current count 3
+Epoch 3, 11, global step: 531, loss 51.331467, acc 0.200000 current count 10
+Epoch 3, 12, global step: 532, loss 51.857536, acc 0.100000 current count 5
+Epoch 3, 13, global step: 533, loss 51.823135, acc 0.140000 current count 7
+Epoch 3, 14, global step: 534, loss 51.910660, acc 0.140000 current count 7
+Epoch 3, 15, global step: 535, loss 51.630535, acc 0.200000 current count 10
+Epoch 3, 16, global step: 536, loss 51.426868, acc 0.160000 current count 8
+Epoch 3, 17, global step: 537, loss 51.754158, acc 0.180000 current count 9
+Epoch 3, 18, global step: 538, loss 51.687767, acc 0.180000 current count 9
+Epoch 3, 19, global step: 539, loss 51.944321, acc 0.100000 current count 5
+Epoch 3, 20, global step: 540, loss 52.230476, acc 0.140000 current count 7
+Epoch 3, 21, global step: 541, loss 52.097572, acc 0.100000 current count 5
+Epoch 3, 22, global step: 542, loss 51.699139, acc 0.100000 current count 5
+Epoch 3, 23, global step: 543, loss 52.245064, acc 0.100000 current count 5
+Epoch 3, 24, global step: 544, loss 51.744583, acc 0.080000 current count 4
+Epoch 3, 25, global step: 545, loss 50.906818, acc 0.220000 current count 11
+Epoch 3, 26, global step: 546, loss 51.764282, acc 0.160000 current count 8
+Epoch 3, 27, global step: 547, loss 51.919697, acc 0.120000 current count 6
+Epoch 3, 28, global step: 548, loss 51.660400, acc 0.140000 current count 7
+Epoch 3, 29, global step: 549, loss 50.990025, acc 0.180000 current count 9
+Epoch 3, 30, global step: 550, loss 51.214886, acc 0.120000 current count 6
+Eval 3, 30, global step:550, acc 0.148000 current count 74, all count 500
+Save model, this step acc: 0.148000, last step acc: 0.138000
+Epoch 3, 31, global step: 551, loss 51.770466, acc 0.160000 current count 8
+Epoch 3, 32, global step: 552, loss 51.817127, acc 0.120000 current count 6
+Epoch 3, 33, global step: 553, loss 51.930584, acc 0.140000 current count 7
+Epoch 3, 34, global step: 554, loss 52.208645, acc 0.100000 current count 5
+Epoch 3, 35, global step: 555, loss 51.717724, acc 0.100000 current count 5
+Epoch 3, 36, global step: 556, loss 52.093227, acc 0.120000 current count 6
+Epoch 3, 37, global step: 557, loss 51.859745, acc 0.140000 current count 7
+Epoch 3, 38, global step: 558, loss 51.211430, acc 0.080000 current count 4
+Epoch 3, 39, global step: 559, loss 51.193752, acc 0.120000 current count 6
+Epoch 3, 40, global step: 560, loss 51.601032, acc 0.180000 current count 9
+Epoch 3, 41, global step: 561, loss 52.002544, acc 0.120000 current count 6
+Epoch 3, 42, global step: 562, loss 51.524349, acc 0.200000 current count 10
+Epoch 3, 43, global step: 563, loss 52.220917, acc 0.100000 current count 5
+Epoch 3, 44, global step: 564, loss 51.449936, acc 0.140000 current count 7
+Epoch 3, 45, global step: 565, loss 52.127300, acc 0.140000 current count 7
+Epoch 3, 46, global step: 566, loss 51.965717, acc 0.080000 current count 4
+Epoch 3, 47, global step: 567, loss 51.429348, acc 0.220000 current count 11
+Epoch 3, 48, global step: 568, loss 52.402699, acc 0.140000 current count 7
+Epoch 3, 49, global step: 569, loss 52.214481, acc 0.140000 current count 7
+Epoch 3, 50, global step: 570, loss 51.525658, acc 0.160000 current count 8
+Epoch 3, 51, global step: 571, loss 51.516182, acc 0.240000 current count 12
+Epoch 3, 52, global step: 572, loss 51.436176, acc 0.260000 current count 13
+Epoch 3, 53, global step: 573, loss 51.768135, acc 0.200000 current count 10
+Epoch 3, 54, global step: 574, loss 52.416435, acc 0.120000 current count 6
+Epoch 3, 55, global step: 575, loss 51.743050, acc 0.140000 current count 7
+Epoch 3, 56, global step: 576, loss 52.170315, acc 0.040000 current count 2
+Epoch 3, 57, global step: 577, loss 51.859402, acc 0.160000 current count 8
+Epoch 3, 58, global step: 578, loss 51.994289, acc 0.160000 current count 8
+Epoch 3, 59, global step: 579, loss 51.549019, acc 0.220000 current count 11
+Epoch 3, 60, global step: 580, loss 51.823250, acc 0.200000 current count 10
+Epoch 3, 61, global step: 581, loss 51.372429, acc 0.220000 current count 11
+Epoch 3, 62, global step: 582, loss 51.845268, acc 0.180000 current count 9
+Epoch 3, 63, global step: 583, loss 51.998631, acc 0.160000 current count 8
+Epoch 3, 64, global step: 584, loss 50.901340, acc 0.140000 current count 7
+Epoch 3, 65, global step: 585, loss 52.449692, acc 0.080000 current count 4
+Epoch 3, 66, global step: 586, loss 51.913696, acc 0.140000 current count 7
+Epoch 3, 67, global step: 587, loss 52.278587, acc 0.200000 current count 10
+Epoch 3, 68, global step: 588, loss 51.284702, acc 0.180000 current count 9
+Epoch 3, 69, global step: 589, loss 51.420887, acc 0.160000 current count 8
+Epoch 3, 70, global step: 590, loss 51.528816, acc 0.180000 current count 9
+Epoch 3, 71, global step: 591, loss 51.382919, acc 0.240000 current count 12
+Epoch 3, 72, global step: 592, loss 51.261719, acc 0.340000 current count 17
+Epoch 3, 73, global step: 593, loss 51.163895, acc 0.200000 current count 10
+Epoch 3, 74, global step: 594, loss 52.040985, acc 0.140000 current count 7
+Epoch 3, 75, global step: 595, loss 51.663490, acc 0.140000 current count 7
+Epoch 3, 76, global step: 596, loss 51.885384, acc 0.120000 current count 6
+Epoch 3, 77, global step: 597, loss 51.531853, acc 0.220000 current count 11
+Epoch 3, 78, global step: 598, loss 51.225777, acc 0.140000 current count 7
+Epoch 3, 79, global step: 599, loss 51.564457, acc 0.140000 current count 7
+Epoch 3, 80, global step: 600, loss 51.601780, acc 0.060000 current count 3
+Eval 3, 80, global step:600, acc 0.176000 current count 88, all count 500
+Save model, this step acc: 0.176000, last step acc: 0.148000
+Epoch 3, 81, global step: 601, loss 51.732639, acc 0.100000 current count 5
+Epoch 3, 82, global step: 602, loss 51.560307, acc 0.140000 current count 7
+Epoch 3, 83, global step: 603, loss 51.537762, acc 0.140000 current count 7
+Epoch 3, 84, global step: 604, loss 52.162998, acc 0.120000 current count 6
+Epoch 3, 85, global step: 605, loss 51.787823, acc 0.140000 current count 7
+Epoch 3, 86, global step: 606, loss 50.989300, acc 0.200000 current count 10
+Epoch 3, 87, global step: 607, loss 51.377102, acc 0.240000 current count 12
+Epoch 3, 88, global step: 608, loss 51.497250, acc 0.200000 current count 10
+Epoch 3, 89, global step: 609, loss 51.221107, acc 0.160000 current count 8
+Epoch 3, 90, global step: 610, loss 51.799183, acc 0.100000 current count 5
+Epoch 3, 91, global step: 611, loss 51.099792, acc 0.240000 current count 12
+Epoch 3, 92, global step: 612, loss 51.048836, acc 0.120000 current count 6
+Epoch 3, 93, global step: 613, loss 51.885525, acc 0.120000 current count 6
+Epoch 3, 94, global step: 614, loss 52.418251, acc 0.180000 current count 9
+Epoch 3, 95, global step: 615, loss 52.198154, acc 0.160000 current count 8
+Epoch 3, 96, global step: 616, loss 51.957314, acc 0.120000 current count 6
+Epoch 3, 97, global step: 617, loss 51.207058, acc 0.200000 current count 10
+Epoch 3, 98, global step: 618, loss 50.987637, acc 0.180000 current count 9
+Epoch 3, 99, global step: 619, loss 50.931122, acc 0.260000 current count 13
+Epoch 3, 100, global step: 620, loss 51.070881, acc 0.240000 current count 12
+Epoch 3, 101, global step: 621, loss 51.448681, acc 0.240000 current count 12
+Epoch 3, 102, global step: 622, loss 52.005756, acc 0.080000 current count 4
+Epoch 3, 103, global step: 623, loss 51.640854, acc 0.120000 current count 6
+Epoch 3, 104, global step: 624, loss 52.044800, acc 0.080000 current count 4
+Epoch 3, 105, global step: 625, loss 51.088261, acc 0.220000 current count 11
+Epoch 3, 106, global step: 626, loss 50.660450, acc 0.220000 current count 11
+Epoch 3, 107, global step: 627, loss 51.354107, acc 0.120000 current count 6
+Epoch 3, 108, global step: 628, loss 52.112274, acc 0.160000 current count 8
+Epoch 3, 109, global step: 629, loss 50.707840, acc 0.220000 current count 11
+Epoch 3, 110, global step: 630, loss 50.687313, acc 0.200000 current count 10
+Epoch 3, 111, global step: 631, loss 52.049046, acc 0.080000 current count 4
+Epoch 3, 112, global step: 632, loss 50.139866, acc 0.160000 current count 8
+Epoch 3, 113, global step: 633, loss 49.912655, acc 0.260000 current count 13
+Epoch 3, 114, global step: 634, loss 51.064747, acc 0.120000 current count 6
+Epoch 3, 115, global step: 635, loss 49.772999, acc 0.320000 current count 16
+Epoch 3, 116, global step: 636, loss 51.528465, acc 0.120000 current count 6
+Epoch 3, 117, global step: 637, loss 51.040672, acc 0.200000 current count 10
+Epoch 3, 118, global step: 638, loss 51.345695, acc 0.180000 current count 9
+Epoch 3, 119, global step: 639, loss 51.039783, acc 0.160000 current count 8
+Epoch 3, 120, global step: 640, loss 51.140057, acc 0.060000 current count 3
+Epoch 3, 121, global step: 641, loss 51.366070, acc 0.140000 current count 7
+Epoch 3, 122, global step: 642, loss 51.874931, acc 0.180000 current count 9
+Epoch 3, 123, global step: 643, loss 50.918915, acc 0.240000 current count 12
+Epoch 3, 124, global step: 644, loss 51.747177, acc 0.160000 current count 8
+Epoch 3, 125, global step: 645, loss 52.156521, acc 0.100000 current count 5
+Epoch 3, 126, global step: 646, loss 51.415199, acc 0.080000 current count 4
+Epoch 3, 127, global step: 647, loss 51.800331, acc 0.200000 current count 10
+Epoch 3, 128, global step: 648, loss 51.809383, acc 0.160000 current count 8
+Epoch 3, 129, global step: 649, loss 52.463596, acc 0.160000 current count 8
+Epoch 3, 130, global step: 650, loss 52.063637, acc 0.140000 current count 7
+Eval 3, 130, global step:650, acc 0.174000 current count 87, all count 500
+Epoch 3, 131, global step: 651, loss 51.046597, acc 0.160000 current count 8
+Epoch 3, 132, global step: 652, loss 50.136185, acc 0.220000 current count 11
+Epoch 3, 133, global step: 653, loss 51.553856, acc 0.100000 current count 5
+Epoch 3, 134, global step: 654, loss 51.334305, acc 0.220000 current count 11
+Epoch 3, 135, global step: 655, loss 50.827087, acc 0.120000 current count 6
+Epoch 3, 136, global step: 656, loss 50.573036, acc 0.220000 current count 11
+Epoch 3, 137, global step: 657, loss 51.218864, acc 0.160000 current count 8
+Epoch 3, 138, global step: 658, loss 51.647984, acc 0.160000 current count 8
+Epoch 3, 139, global step: 659, loss 51.837009, acc 0.120000 current count 6
+Epoch 3, 140, global step: 660, loss 52.193462, acc 0.140000 current count 7
+Epoch 3, 141, global step: 661, loss 51.519794, acc 0.160000 current count 8
+Epoch 3, 142, global step: 662, loss 51.467758, acc 0.240000 current count 12
+Epoch 3, 143, global step: 663, loss 51.785671, acc 0.120000 current count 6
+Epoch 3, 144, global step: 664, loss 50.298145, acc 0.280000 current count 14
+Epoch 3, 145, global step: 665, loss 51.212017, acc 0.240000 current count 12
+Epoch 3, 146, global step: 666, loss 51.259861, acc 0.220000 current count 11
+Epoch 3, 147, global step: 667, loss 50.955025, acc 0.200000 current count 10
+Epoch 3, 148, global step: 668, loss 50.767326, acc 0.160000 current count 8
+Epoch 3, 149, global step: 669, loss 51.058144, acc 0.260000 current count 13
+Epoch 3, 150, global step: 670, loss 51.910297, acc 0.120000 current count 6
+Epoch 3, 151, global step: 671, loss 50.776245, acc 0.160000 current count 8
+Epoch 3, 152, global step: 672, loss 52.445751, acc 0.080000 current count 4
+Epoch 3, 153, global step: 673, loss 50.584160, acc 0.120000 current count 6
+Epoch 3, 154, global step: 674, loss 51.471184, acc 0.180000 current count 9
+Epoch 3, 155, global step: 675, loss 51.907829, acc 0.100000 current count 5
+Epoch 3, 156, global step: 676, loss 50.624794, acc 0.320000 current count 16
+Epoch 3, 157, global step: 677, loss 51.024597, acc 0.240000 current count 12
+Epoch 3, 158, global step: 678, loss 51.967415, acc 0.120000 current count 6
+Epoch 3, 159, global step: 679, loss 50.667000, acc 0.180000 current count 9
+Epoch 3, 160, global step: 680, loss 52.394131, acc 0.120000 current count 6
+Epoch 3, 161, global step: 681, loss 49.915447, acc 0.240000 current count 12
+Epoch 3, 162, global step: 682, loss 51.400742, acc 0.120000 current count 6
+Epoch 3, 163, global step: 683, loss 52.118958, acc 0.160000 current count 8
+Epoch 3, 164, global step: 684, loss 50.775806, acc 0.180000 current count 9
+Epoch 3, 165, global step: 685, loss 51.610420, acc 0.140000 current count 7
+Epoch 3, 166, global step: 686, loss 51.558422, acc 0.180000 current count 9
+Epoch 3, 167, global step: 687, loss 50.979450, acc 0.180000 current count 9
+Epoch 3, 168, global step: 688, loss 51.372509, acc 0.160000 current count 8
+Epoch 3, 169, global step: 689, loss 51.944492, acc 0.120000 current count 6
+Epoch 3, 170, global step: 690, loss 50.390747, acc 0.260000 current count 13
+Epoch 3, 171, global step: 691, loss 51.924755, acc 0.200000 current count 10
+Epoch 3, 172, global step: 692, loss 51.934063, acc 0.100000 current count 5
+Epoch 3, 173, global step: 693, loss 51.123489, acc 0.200000 current count 10
+Epoch 3, 174, global step: 694, loss 50.930931, acc 0.100000 current count 5
+Epoch 3, 175, global step: 695, loss 51.761028, acc 0.120000 current count 6
+Epoch 3, 176, global step: 696, loss 50.992268, acc 0.160000 current count 8
+Epoch 3, 177, global step: 697, loss 50.330585, acc 0.200000 current count 10
+Epoch 3, 178, global step: 698, loss 50.669128, acc 0.220000 current count 11
+Epoch 3, 179, global step: 699, loss 51.734707, acc 0.100000 current count 5
+Epoch 3, 180, global step: 700, loss 52.514809, acc 0.120000 current count 6
+Eval 3, 180, global step:700, acc 0.170000 current count 85, all count 500
+Epoch 3, 181, global step: 701, loss 52.375778, acc 0.120000 current count 6
+Epoch 3, 182, global step: 702, loss 52.065125, acc 0.100000 current count 5
+Epoch 3, 183, global step: 703, loss 51.920689, acc 0.100000 current count 5
+Epoch 3, 184, global step: 704, loss 51.168396, acc 0.180000 current count 9
+Epoch 3, 185, global step: 705, loss 51.244331, acc 0.200000 current count 10
+Epoch 3, 186, global step: 706, loss 51.817226, acc 0.160000 current count 8
+Epoch 3, 187, global step: 707, loss 51.413254, acc 0.160000 current count 8
+Epoch 3, 188, global step: 708, loss 51.264965, acc 0.160000 current count 8
+Epoch 3, 189, global step: 709, loss 49.964897, acc 0.200000 current count 10
+Epoch 3, 190, global step: 710, loss 51.525517, acc 0.100000 current count 5
+Epoch 3, 191, global step: 711, loss 51.538513, acc 0.200000 current count 10
+Epoch 3, 192, global step: 712, loss 51.890995, acc 0.080000 current count 4
+Epoch 3, 193, global step: 713, loss 51.006981, acc 0.200000 current count 10
+Epoch 3, 194, global step: 714, loss 52.342743, acc 0.060000 current count 3
+Epoch 3, 195, global step: 715, loss 52.126423, acc 0.140000 current count 7
+Epoch 3, 196, global step: 716, loss 52.067402, acc 0.100000 current count 5
+Epoch 3, 197, global step: 717, loss 51.283115, acc 0.180000 current count 9
+Epoch 3, 198, global step: 718, loss 49.786026, acc 0.300000 current count 15
+Epoch 3, 199, global step: 719, loss 52.291981, acc 0.040000 current count 2
+Epoch 3, 200, global step: 720, loss 51.433975, acc 0.200000 current count 10
+Epoch 3, 201, global step: 721, loss 50.914787, acc 0.160000 current count 8
+Epoch 3, 202, global step: 722, loss 51.887390, acc 0.080000 current count 4
+Epoch 3, 203, global step: 723, loss 49.961571, acc 0.240000 current count 12
+Epoch 3, 204, global step: 724, loss 51.147289, acc 0.180000 current count 9
+Epoch 3, 205, global step: 725, loss 51.300579, acc 0.240000 current count 12
+Epoch 3, 206, global step: 726, loss 50.822624, acc 0.220000 current count 11
+Epoch 3, 207, global step: 727, loss 50.649963, acc 0.280000 current count 14
+Epoch 3, 208, global step: 728, loss 51.587894, acc 0.180000 current count 9
+Epoch 3, 209, global step: 729, loss 50.788197, acc 0.220000 current count 11
+Epoch 3, 210, global step: 730, loss 51.293221, acc 0.140000 current count 7
+Epoch 3, 211, global step: 731, loss 51.848896, acc 0.160000 current count 8
+Epoch 3, 212, global step: 732, loss 50.614872, acc 0.200000 current count 10
+Epoch 3, 213, global step: 733, loss 49.778294, acc 0.220000 current count 11
+Epoch 3, 214, global step: 734, loss 51.444809, acc 0.140000 current count 7
+Epoch 3, 215, global step: 735, loss 51.499603, acc 0.200000 current count 10
+Epoch 3, 216, global step: 736, loss 51.392715, acc 0.200000 current count 10
+Epoch 3, 217, global step: 737, loss 50.833969, acc 0.180000 current count 9
+Epoch 3, 218, global step: 738, loss 50.969788, acc 0.220000 current count 11
+Epoch 3, 219, global step: 739, loss 50.298321, acc 0.200000 current count 10
+Epoch 3, 220, global step: 740, loss 51.320278, acc 0.180000 current count 9
+Epoch 3, 221, global step: 741, loss 49.809280, acc 0.220000 current count 11
+Epoch 3, 222, global step: 742, loss 51.415329, acc 0.140000 current count 7
+Epoch 3, 223, global step: 743, loss 51.697338, acc 0.200000 current count 10
+Epoch 3, 224, global step: 744, loss 51.589260, acc 0.160000 current count 8
+Epoch 3, 225, global step: 745, loss 51.951843, acc 0.080000 current count 4
+Epoch 3, 226, global step: 746, loss 50.862049, acc 0.240000 current count 12
+Epoch 3, 227, global step: 747, loss 49.894367, acc 0.200000 current count 10
+Epoch 3, 228, global step: 748, loss 51.427307, acc 0.140000 current count 7
+Epoch 3, 229, global step: 749, loss 52.482891, acc 0.120000 current count 6
+Epoch 3, 230, global step: 750, loss 51.693489, acc 0.140000 current count 7
+Eval 3, 230, global step:750, acc 0.168000 current count 84, all count 500
+Epoch 3, 231, global step: 751, loss 50.821125, acc 0.200000 current count 10
+Epoch 3, 232, global step: 752, loss 51.637783, acc 0.140000 current count 7
+Epoch 3, 233, global step: 753, loss 50.761848, acc 0.200000 current count 10
+Epoch 3, 234, global step: 754, loss 52.942444, acc 0.120000 current count 6
+Epoch 3, 235, global step: 755, loss 52.149090, acc 0.160000 current count 8
+Epoch 3, 236, global step: 756, loss 51.696247, acc 0.060000 current count 3
+Epoch 3, 237, global step: 757, loss 52.094574, acc 0.140000 current count 7
+Epoch 3, 238, global step: 758, loss 50.192703, acc 0.340000 current count 17
+Epoch 3, 239, global step: 759, loss 50.371277, acc 0.160000 current count 8
+Epoch 3, 240, global step: 760, loss 51.088188, acc 0.180000 current count 9
+Epoch 3, 241, global step: 761, loss 50.992397, acc 0.200000 current count 10
+Epoch 3, 242, global step: 762, loss 49.468025, acc 0.280000 current count 14
+Epoch 3, 243, global step: 763, loss 51.967087, acc 0.160000 current count 8
+Epoch 3, 244, global step: 764, loss 51.123318, acc 0.160000 current count 8
+Epoch 3, 245, global step: 765, loss 50.668388, acc 0.220000 current count 11
+Epoch 3, 246, global step: 766, loss 51.919624, acc 0.200000 current count 10
+Epoch 3, 247, global step: 767, loss 50.410694, acc 0.320000 current count 16
+Epoch 3, 248, global step: 768, loss 52.011909, acc 0.160000 current count 8
+Epoch 3, 249, global step: 769, loss 49.933479, acc 0.220000 current count 11
+Epoch 3, 250, global step: 770, loss 50.853798, acc 0.160000 current count 8
+Epoch 3, 251, global step: 771, loss 52.661541, acc 0.140000 current count 7
+Epoch 3, 252, global step: 772, loss 51.290588, acc 0.200000 current count 10
+Epoch 3, 253, global step: 773, loss 50.360500, acc 0.240000 current count 12
+Epoch 3, 254, global step: 774, loss 51.258759, acc 0.100000 current count 5
+Epoch 3, 255, global step: 775, loss 50.853367, acc 0.200000 current count 10
+Epoch 3, 256, global step: 776, loss 51.392776, acc 0.120000 current count 6
+Epoch 3, 257, global step: 777, loss 50.172344, acc 0.180000 current count 9
+Epoch 3, 258, global step: 778, loss 51.245285, acc 0.180000 current count 9
+Epoch 3, 259, global step: 779, loss 52.115582, acc 0.180000 current count 9
+Epoch 3, 260, global step: 780, loss 49.587139, acc 0.220000 current count 11
+Epoch 4, 1, global step: 781, loss 51.301437, acc 0.160000 current count 8
+Epoch 4, 2, global step: 782, loss 51.794006, acc 0.100000 current count 5
+Epoch 4, 3, global step: 783, loss 50.337856, acc 0.180000 current count 9
+Epoch 4, 4, global step: 784, loss 51.546860, acc 0.120000 current count 6
+Epoch 4, 5, global step: 785, loss 50.940643, acc 0.220000 current count 11
+Epoch 4, 6, global step: 786, loss 51.629177, acc 0.080000 current count 4
+Epoch 4, 7, global step: 787, loss 51.816341, acc 0.080000 current count 4
+Epoch 4, 8, global step: 788, loss 51.167385, acc 0.200000 current count 10
+Epoch 4, 9, global step: 789, loss 49.331200, acc 0.220000 current count 11
+Epoch 4, 10, global step: 790, loss 49.132317, acc 0.240000 current count 12
+Epoch 4, 11, global step: 791, loss 50.981804, acc 0.140000 current count 7
+Epoch 4, 12, global step: 792, loss 52.515049, acc 0.100000 current count 5
+Epoch 4, 13, global step: 793, loss 51.271732, acc 0.200000 current count 10
+Epoch 4, 14, global step: 794, loss 51.223972, acc 0.200000 current count 10
+Epoch 4, 15, global step: 795, loss 51.042080, acc 0.220000 current count 11
+Epoch 4, 16, global step: 796, loss 51.097988, acc 0.120000 current count 6
+Epoch 4, 17, global step: 797, loss 50.345310, acc 0.300000 current count 15
+Epoch 4, 18, global step: 798, loss 52.248055, acc 0.120000 current count 6
+Epoch 4, 19, global step: 799, loss 51.996845, acc 0.120000 current count 6
+Epoch 4, 20, global step: 800, loss 50.506916, acc 0.180000 current count 9
+Eval 4, 20, global step:800, acc 0.236000 current count 118, all count 500
+Save model, this step acc: 0.236000, last step acc: 0.176000
+Epoch 4, 21, global step: 801, loss 49.195717, acc 0.320000 current count 16
+Epoch 4, 22, global step: 802, loss 51.605774, acc 0.060000 current count 3
+Epoch 4, 23, global step: 803, loss 48.168152, acc 0.240000 current count 12
+Epoch 4, 24, global step: 804, loss 49.591480, acc 0.260000 current count 13
+Epoch 4, 25, global step: 805, loss 50.347576, acc 0.200000 current count 10
+Epoch 4, 26, global step: 806, loss 51.339676, acc 0.160000 current count 8
+Epoch 4, 27, global step: 807, loss 50.002548, acc 0.260000 current count 13
+Epoch 4, 28, global step: 808, loss 51.765316, acc 0.180000 current count 9
+Epoch 4, 29, global step: 809, loss 50.492035, acc 0.240000 current count 12
+Epoch 4, 30, global step: 810, loss 51.101128, acc 0.120000 current count 6
+Epoch 4, 31, global step: 811, loss 51.015339, acc 0.140000 current count 7
+Epoch 4, 32, global step: 812, loss 52.361244, acc 0.160000 current count 8
+Epoch 4, 33, global step: 813, loss 51.006649, acc 0.120000 current count 6
+Epoch 4, 34, global step: 814, loss 49.744804, acc 0.260000 current count 13
+Epoch 4, 35, global step: 815, loss 50.268211, acc 0.220000 current count 11
+Epoch 4, 36, global step: 816, loss 51.075428, acc 0.140000 current count 7
+Epoch 4, 37, global step: 817, loss 51.356815, acc 0.240000 current count 12
+Epoch 4, 38, global step: 818, loss 51.223721, acc 0.180000 current count 9
+Epoch 4, 39, global step: 819, loss 50.575886, acc 0.220000 current count 11
+Epoch 4, 40, global step: 820, loss 50.196114, acc 0.120000 current count 6
+Epoch 4, 41, global step: 821, loss 49.628399, acc 0.120000 current count 6
+Epoch 4, 42, global step: 822, loss 50.167381, acc 0.160000 current count 8
+Epoch 4, 43, global step: 823, loss 50.585651, acc 0.220000 current count 11
+Epoch 4, 44, global step: 824, loss 50.613018, acc 0.160000 current count 8
+Epoch 4, 45, global step: 825, loss 51.683548, acc 0.240000 current count 12
+Epoch 4, 46, global step: 826, loss 50.592102, acc 0.200000 current count 10
+Epoch 4, 47, global step: 827, loss 50.143841, acc 0.180000 current count 9
+Epoch 4, 48, global step: 828, loss 51.644482, acc 0.120000 current count 6
+Epoch 4, 49, global step: 829, loss 51.572983, acc 0.180000 current count 9
+Epoch 4, 50, global step: 830, loss 50.760708, acc 0.260000 current count 13
+Epoch 4, 51, global step: 831, loss 49.991859, acc 0.280000 current count 14
+Epoch 4, 52, global step: 832, loss 49.484619, acc 0.280000 current count 14
+Epoch 4, 53, global step: 833, loss 50.089451, acc 0.200000 current count 10
+Epoch 4, 54, global step: 834, loss 50.621532, acc 0.140000 current count 7
+Epoch 4, 55, global step: 835, loss 50.866821, acc 0.120000 current count 6
+Epoch 4, 56, global step: 836, loss 50.540585, acc 0.180000 current count 9
+Epoch 4, 57, global step: 837, loss 51.684002, acc 0.140000 current count 7
+Epoch 4, 58, global step: 838, loss 51.359798, acc 0.160000 current count 8
+Epoch 4, 59, global step: 839, loss 49.601189, acc 0.280000 current count 14
+Epoch 4, 60, global step: 840, loss 50.671986, acc 0.200000 current count 10
+Epoch 4, 61, global step: 841, loss 49.766762, acc 0.260000 current count 13
+Epoch 4, 62, global step: 842, loss 50.394836, acc 0.240000 current count 12
+Epoch 4, 63, global step: 843, loss 48.837246, acc 0.220000 current count 11
+Epoch 4, 64, global step: 844, loss 52.742821, acc 0.100000 current count 5
+Epoch 4, 65, global step: 845, loss 50.854485, acc 0.200000 current count 10
+Epoch 4, 66, global step: 846, loss 51.786385, acc 0.200000 current count 10
+Epoch 4, 67, global step: 847, loss 51.415169, acc 0.160000 current count 8
+Epoch 4, 68, global step: 848, loss 49.043266, acc 0.240000 current count 12
+Epoch 4, 69, global step: 849, loss 51.853504, acc 0.180000 current count 9
+Epoch 4, 70, global step: 850, loss 49.443573, acc 0.200000 current count 10
+Eval 4, 70, global step:850, acc 0.196000 current count 98, all count 500
+Epoch 4, 71, global step: 851, loss 51.522953, acc 0.140000 current count 7
+Epoch 4, 72, global step: 852, loss 49.921192, acc 0.300000 current count 15
+Epoch 4, 73, global step: 853, loss 51.663155, acc 0.120000 current count 6
+Epoch 4, 74, global step: 854, loss 50.911415, acc 0.200000 current count 10
+Epoch 4, 75, global step: 855, loss 48.843056, acc 0.280000 current count 14
+Epoch 4, 76, global step: 856, loss 53.214737, acc 0.120000 current count 6
+Epoch 4, 77, global step: 857, loss 50.378269, acc 0.180000 current count 9
+Epoch 4, 78, global step: 858, loss 50.227375, acc 0.240000 current count 12
+Epoch 4, 79, global step: 859, loss 48.502426, acc 0.300000 current count 15
+Epoch 4, 80, global step: 860, loss 49.718075, acc 0.200000 current count 10
+Epoch 4, 81, global step: 861, loss 51.855091, acc 0.160000 current count 8
+Epoch 4, 82, global step: 862, loss 50.153622, acc 0.280000 current count 14
+Epoch 4, 83, global step: 863, loss 50.918877, acc 0.160000 current count 8
+Epoch 4, 84, global step: 864, loss 48.642715, acc 0.220000 current count 11
+Epoch 4, 85, global step: 865, loss 50.695667, acc 0.160000 current count 8
+Epoch 4, 86, global step: 866, loss 48.530346, acc 0.220000 current count 11
+Epoch 4, 87, global step: 867, loss 49.267509, acc 0.240000 current count 12
+Epoch 4, 88, global step: 868, loss 51.636780, acc 0.180000 current count 9
+Epoch 4, 89, global step: 869, loss 51.421043, acc 0.120000 current count 6
+Epoch 4, 90, global step: 870, loss 51.457924, acc 0.140000 current count 7
+Epoch 4, 91, global step: 871, loss 52.247452, acc 0.180000 current count 9
+Epoch 4, 92, global step: 872, loss 49.841377, acc 0.220000 current count 11
+Epoch 4, 93, global step: 873, loss 50.287216, acc 0.240000 current count 12
+Epoch 4, 94, global step: 874, loss 51.667046, acc 0.200000 current count 10
+Epoch 4, 95, global step: 875, loss 50.810120, acc 0.160000 current count 8
+Epoch 4, 96, global step: 876, loss 49.902401, acc 0.220000 current count 11
+Epoch 4, 97, global step: 877, loss 51.944046, acc 0.180000 current count 9
+Epoch 4, 98, global step: 878, loss 49.483723, acc 0.260000 current count 13
+Epoch 4, 99, global step: 879, loss 50.846531, acc 0.160000 current count 8
+Epoch 4, 100, global step: 880, loss 50.064957, acc 0.240000 current count 12
+Epoch 4, 101, global step: 881, loss 50.983677, acc 0.160000 current count 8
+Epoch 4, 102, global step: 882, loss 47.678333, acc 0.260000 current count 13
+Epoch 4, 103, global step: 883, loss 51.010155, acc 0.160000 current count 8
+Epoch 4, 104, global step: 884, loss 49.557713, acc 0.280000 current count 14
+Epoch 4, 105, global step: 885, loss 49.699177, acc 0.240000 current count 12
+Epoch 4, 106, global step: 886, loss 50.446884, acc 0.180000 current count 9
+Epoch 4, 107, global step: 887, loss 51.447800, acc 0.140000 current count 7
+Epoch 4, 108, global step: 888, loss 51.014847, acc 0.220000 current count 11
+Epoch 4, 109, global step: 889, loss 51.622383, acc 0.120000 current count 6
+Epoch 4, 110, global step: 890, loss 50.740303, acc 0.120000 current count 6
+Epoch 4, 111, global step: 891, loss 49.707161, acc 0.260000 current count 13
+Epoch 4, 112, global step: 892, loss 48.848015, acc 0.260000 current count 13
+Epoch 4, 113, global step: 893, loss 50.649136, acc 0.260000 current count 13
+Epoch 4, 114, global step: 894, loss 51.236351, acc 0.220000 current count 11
+Epoch 4, 115, global step: 895, loss 49.766006, acc 0.300000 current count 15
+Epoch 4, 116, global step: 896, loss 49.797611, acc 0.220000 current count 11
+Epoch 4, 117, global step: 897, loss 49.356419, acc 0.220000 current count 11
+Epoch 4, 118, global step: 898, loss 49.159100, acc 0.180000 current count 9
+Epoch 4, 119, global step: 899, loss 50.094944, acc 0.200000 current count 10
+Epoch 4, 120, global step: 900, loss 50.522312, acc 0.260000 current count 13
+Eval 4, 120, global step:900, acc 0.182000 current count 91, all count 500
+Epoch 4, 121, global step: 901, loss 51.276196, acc 0.160000 current count 8
+Epoch 4, 122, global step: 902, loss 49.625019, acc 0.260000 current count 13
+Epoch 4, 123, global step: 903, loss 50.910957, acc 0.160000 current count 8
+Epoch 4, 124, global step: 904, loss 51.109314, acc 0.280000 current count 14
+Epoch 4, 125, global step: 905, loss 51.366108, acc 0.140000 current count 7
+Epoch 4, 126, global step: 906, loss 49.680950, acc 0.220000 current count 11
+Epoch 4, 127, global step: 907, loss 50.010990, acc 0.180000 current count 9
+Epoch 4, 128, global step: 908, loss 51.157497, acc 0.160000 current count 8
+Epoch 4, 129, global step: 909, loss 49.369461, acc 0.240000 current count 12
+Epoch 4, 130, global step: 910, loss 52.169556, acc 0.240000 current count 12
+Epoch 4, 131, global step: 911, loss 49.860859, acc 0.260000 current count 13
+Epoch 4, 132, global step: 912, loss 49.240398, acc 0.260000 current count 13
+Epoch 4, 133, global step: 913, loss 49.272026, acc 0.240000 current count 12
+Epoch 4, 134, global step: 914, loss 49.728432, acc 0.300000 current count 15
+Epoch 4, 135, global step: 915, loss 50.593166, acc 0.220000 current count 11
+Epoch 4, 136, global step: 916, loss 51.639305, acc 0.160000 current count 8
+Epoch 4, 137, global step: 917, loss 50.313362, acc 0.160000 current count 8
+Epoch 4, 138, global step: 918, loss 50.564224, acc 0.200000 current count 10
+Epoch 4, 139, global step: 919, loss 50.484016, acc 0.200000 current count 10
+Epoch 4, 140, global step: 920, loss 49.297234, acc 0.260000 current count 13
+Epoch 4, 141, global step: 921, loss 49.317581, acc 0.220000 current count 11
+Epoch 4, 142, global step: 922, loss 51.258320, acc 0.160000 current count 8
+Epoch 4, 143, global step: 923, loss 49.845806, acc 0.120000 current count 6
+Epoch 4, 144, global step: 924, loss 50.087551, acc 0.220000 current count 11
+Epoch 4, 145, global step: 925, loss 51.332588, acc 0.240000 current count 12
+Epoch 4, 146, global step: 926, loss 48.877197, acc 0.220000 current count 11
+Epoch 4, 147, global step: 927, loss 51.605995, acc 0.140000 current count 7
+Epoch 4, 148, global step: 928, loss 47.575165, acc 0.300000 current count 15
+Epoch 4, 149, global step: 929, loss 49.152836, acc 0.200000 current count 10
+Epoch 4, 150, global step: 930, loss 50.260220, acc 0.200000 current count 10
+Epoch 4, 151, global step: 931, loss 53.175606, acc 0.100000 current count 5
+Epoch 4, 152, global step: 932, loss 50.275188, acc 0.200000 current count 10
+Epoch 4, 153, global step: 933, loss 48.786392, acc 0.280000 current count 14
+Epoch 4, 154, global step: 934, loss 52.176777, acc 0.200000 current count 10
+Epoch 4, 155, global step: 935, loss 50.742607, acc 0.120000 current count 6
+Epoch 4, 156, global step: 936, loss 51.693527, acc 0.120000 current count 6
+Epoch 4, 157, global step: 937, loss 50.421337, acc 0.300000 current count 15
+Epoch 4, 158, global step: 938, loss 51.589119, acc 0.160000 current count 8
+Epoch 4, 159, global step: 939, loss 50.919807, acc 0.200000 current count 10
+Epoch 4, 160, global step: 940, loss 50.215771, acc 0.180000 current count 9
+Epoch 4, 161, global step: 941, loss 50.579327, acc 0.160000 current count 8
+Epoch 4, 162, global step: 942, loss 48.593067, acc 0.260000 current count 13
+Epoch 4, 163, global step: 943, loss 50.416367, acc 0.200000 current count 10
+Epoch 4, 164, global step: 944, loss 50.579834, acc 0.200000 current count 10
+Epoch 4, 165, global step: 945, loss 49.538113, acc 0.220000 current count 11
+Epoch 4, 166, global step: 946, loss 50.615993, acc 0.140000 current count 7
+Epoch 4, 167, global step: 947, loss 49.479439, acc 0.300000 current count 15
+Epoch 4, 168, global step: 948, loss 51.292236, acc 0.220000 current count 11
+Epoch 4, 169, global step: 949, loss 48.906387, acc 0.340000 current count 17
+Epoch 4, 170, global step: 950, loss 49.899910, acc 0.200000 current count 10
+Eval 4, 170, global step:950, acc 0.202000 current count 101, all count 500
+Epoch 4, 171, global step: 951, loss 50.299107, acc 0.260000 current count 13
+Epoch 4, 172, global step: 952, loss 51.343182, acc 0.160000 current count 8
+Epoch 4, 173, global step: 953, loss 49.001942, acc 0.280000 current count 14
+Epoch 4, 174, global step: 954, loss 49.884636, acc 0.260000 current count 13
+Epoch 4, 175, global step: 955, loss 51.448521, acc 0.180000 current count 9
+Epoch 4, 176, global step: 956, loss 50.751015, acc 0.180000 current count 9
+Epoch 4, 177, global step: 957, loss 48.571365, acc 0.220000 current count 11
+Epoch 4, 178, global step: 958, loss 50.365829, acc 0.140000 current count 7
+Epoch 4, 179, global step: 959, loss 49.944683, acc 0.160000 current count 8
+Epoch 4, 180, global step: 960, loss 49.295769, acc 0.260000 current count 13
+Epoch 4, 181, global step: 961, loss 50.537949, acc 0.180000 current count 9
+Epoch 4, 182, global step: 962, loss 49.399090, acc 0.220000 current count 11
+Epoch 4, 183, global step: 963, loss 48.307652, acc 0.280000 current count 14
+Epoch 4, 184, global step: 964, loss 51.304050, acc 0.180000 current count 9
+Epoch 4, 185, global step: 965, loss 49.677052, acc 0.200000 current count 10
+Epoch 4, 186, global step: 966, loss 51.293407, acc 0.180000 current count 9
+Epoch 4, 187, global step: 967, loss 51.284641, acc 0.140000 current count 7
+Epoch 4, 188, global step: 968, loss 49.814980, acc 0.120000 current count 6
+Epoch 4, 189, global step: 969, loss 51.650574, acc 0.200000 current count 10
+Epoch 4, 190, global step: 970, loss 50.238796, acc 0.240000 current count 12
+Epoch 4, 191, global step: 971, loss 50.984184, acc 0.200000 current count 10
+Epoch 4, 192, global step: 972, loss 48.963581, acc 0.180000 current count 9
+Epoch 4, 193, global step: 973, loss 52.501034, acc 0.120000 current count 6
+Epoch 4, 194, global step: 974, loss 50.522659, acc 0.180000 current count 9
+Epoch 4, 195, global step: 975, loss 48.281021, acc 0.280000 current count 14
+Epoch 4, 196, global step: 976, loss 50.748974, acc 0.120000 current count 6
+Epoch 4, 197, global step: 977, loss 48.562241, acc 0.240000 current count 12
+Epoch 4, 198, global step: 978, loss 48.945457, acc 0.260000 current count 13
+Epoch 4, 199, global step: 979, loss 50.131214, acc 0.200000 current count 10
+Epoch 4, 200, global step: 980, loss 50.348408, acc 0.180000 current count 9
+Epoch 4, 201, global step: 981, loss 49.491848, acc 0.220000 current count 11
+Epoch 4, 202, global step: 982, loss 48.522144, acc 0.220000 current count 11
+Epoch 4, 203, global step: 983, loss 49.362988, acc 0.260000 current count 13
+Epoch 4, 204, global step: 984, loss 50.552650, acc 0.220000 current count 11
+Epoch 4, 205, global step: 985, loss 48.503967, acc 0.220000 current count 11
+Epoch 4, 206, global step: 986, loss 49.005287, acc 0.200000 current count 10
+Epoch 4, 207, global step: 987, loss 50.884327, acc 0.220000 current count 11
+Epoch 4, 208, global step: 988, loss 48.140240, acc 0.240000 current count 12
+Epoch 4, 209, global step: 989, loss 49.633709, acc 0.220000 current count 11
+Epoch 4, 210, global step: 990, loss 51.567913, acc 0.180000 current count 9
+Epoch 4, 211, global step: 991, loss 48.635273, acc 0.340000 current count 17
+Epoch 4, 212, global step: 992, loss 51.303070, acc 0.200000 current count 10
+Epoch 4, 213, global step: 993, loss 49.830147, acc 0.260000 current count 13
+Epoch 4, 214, global step: 994, loss 51.206944, acc 0.160000 current count 8
+Epoch 4, 215, global step: 995, loss 50.182392, acc 0.180000 current count 9
+Epoch 4, 216, global step: 996, loss 49.850002, acc 0.260000 current count 13
+Epoch 4, 217, global step: 997, loss 50.459526, acc 0.160000 current count 8
+Epoch 4, 218, global step: 998, loss 49.889370, acc 0.180000 current count 9
+Epoch 4, 219, global step: 999, loss 48.828770, acc 0.220000 current count 11
+Epoch 4, 220, global step: 1000, loss 49.459827, acc 0.240000 current count 12
+Eval 4, 220, global step:1000, acc 0.196000 current count 98, all count 500
+Epoch 4, 221, global step: 1001, loss 50.590565, acc 0.200000 current count 10
+Epoch 4, 222, global step: 1002, loss 49.883919, acc 0.300000 current count 15
+Epoch 4, 223, global step: 1003, loss 49.176495, acc 0.260000 current count 13
+Epoch 4, 224, global step: 1004, loss 47.519550, acc 0.380000 current count 19
+Epoch 4, 225, global step: 1005, loss 50.310852, acc 0.180000 current count 9
+Epoch 4, 226, global step: 1006, loss 48.444866, acc 0.320000 current count 16
+Epoch 4, 227, global step: 1007, loss 49.763542, acc 0.160000 current count 8
+Epoch 4, 228, global step: 1008, loss 50.144062, acc 0.120000 current count 6
+Epoch 4, 229, global step: 1009, loss 51.044270, acc 0.160000 current count 8
+Epoch 4, 230, global step: 1010, loss 50.010742, acc 0.240000 current count 12
+Epoch 4, 231, global step: 1011, loss 49.136391, acc 0.180000 current count 9
+Epoch 4, 232, global step: 1012, loss 50.007576, acc 0.280000 current count 14
+Epoch 4, 233, global step: 1013, loss 49.630840, acc 0.160000 current count 8
+Epoch 4, 234, global step: 1014, loss 49.934963, acc 0.140000 current count 7
+Epoch 4, 235, global step: 1015, loss 49.563145, acc 0.260000 current count 13
+Epoch 4, 236, global step: 1016, loss 50.503479, acc 0.220000 current count 11
+Epoch 4, 237, global step: 1017, loss 49.084667, acc 0.240000 current count 12
+Epoch 4, 238, global step: 1018, loss 51.190376, acc 0.120000 current count 6
+Epoch 4, 239, global step: 1019, loss 47.452377, acc 0.260000 current count 13
+Epoch 4, 240, global step: 1020, loss 49.892685, acc 0.200000 current count 10
+Epoch 4, 241, global step: 1021, loss 46.156635, acc 0.380000 current count 19
+Epoch 4, 242, global step: 1022, loss 47.916332, acc 0.200000 current count 10
+Epoch 4, 243, global step: 1023, loss 49.787144, acc 0.320000 current count 16
+Epoch 4, 244, global step: 1024, loss 51.353378, acc 0.140000 current count 7
+Epoch 4, 245, global step: 1025, loss 50.669041, acc 0.160000 current count 8
+Epoch 4, 246, global step: 1026, loss 49.179344, acc 0.200000 current count 10
+Epoch 4, 247, global step: 1027, loss 49.793484, acc 0.360000 current count 18
+Epoch 4, 248, global step: 1028, loss 50.911484, acc 0.240000 current count 12
+Epoch 4, 249, global step: 1029, loss 49.347736, acc 0.240000 current count 12
+Epoch 4, 250, global step: 1030, loss 50.470581, acc 0.180000 current count 9
+Epoch 4, 251, global step: 1031, loss 50.549507, acc 0.220000 current count 11
+Epoch 4, 252, global step: 1032, loss 49.252613, acc 0.180000 current count 9
+Epoch 4, 253, global step: 1033, loss 49.558662, acc 0.240000 current count 12
+Epoch 4, 254, global step: 1034, loss 48.099373, acc 0.220000 current count 11
+Epoch 4, 255, global step: 1035, loss 51.110195, acc 0.200000 current count 10
+Epoch 4, 256, global step: 1036, loss 47.748055, acc 0.240000 current count 12
+Epoch 4, 257, global step: 1037, loss 48.962299, acc 0.280000 current count 14
+Epoch 4, 258, global step: 1038, loss 50.195507, acc 0.280000 current count 14
+Epoch 4, 259, global step: 1039, loss 52.117302, acc 0.120000 current count 6
+Epoch 4, 260, global step: 1040, loss 50.969646, acc 0.240000 current count 12
+Epoch 5, 1, global step: 1041, loss 50.173393, acc 0.260000 current count 13
+Epoch 5, 2, global step: 1042, loss 50.697708, acc 0.200000 current count 10
+Epoch 5, 3, global step: 1043, loss 50.212982, acc 0.240000 current count 12
+Epoch 5, 4, global step: 1044, loss 48.559364, acc 0.320000 current count 16
+Epoch 5, 5, global step: 1045, loss 49.609901, acc 0.240000 current count 12
+Epoch 5, 6, global step: 1046, loss 50.610844, acc 0.200000 current count 10
+Epoch 5, 7, global step: 1047, loss 49.029720, acc 0.260000 current count 13
+Epoch 5, 8, global step: 1048, loss 51.758301, acc 0.140000 current count 7
+Epoch 5, 9, global step: 1049, loss 49.453201, acc 0.340000 current count 17
+Epoch 5, 10, global step: 1050, loss 50.141418, acc 0.180000 current count 9
+Eval 5, 10, global step:1050, acc 0.232000 current count 116, all count 500
+Epoch 5, 11, global step: 1051, loss 49.682362, acc 0.260000 current count 13
+Epoch 5, 12, global step: 1052, loss 49.438240, acc 0.220000 current count 11
+Epoch 5, 13, global step: 1053, loss 49.503719, acc 0.280000 current count 14
+Epoch 5, 14, global step: 1054, loss 52.278206, acc 0.100000 current count 5
+Epoch 5, 15, global step: 1055, loss 48.494717, acc 0.260000 current count 13
+Epoch 5, 16, global step: 1056, loss 49.257977, acc 0.260000 current count 13
+Epoch 5, 17, global step: 1057, loss 47.472805, acc 0.280000 current count 14
+Epoch 5, 18, global step: 1058, loss 52.316547, acc 0.100000 current count 5
+Epoch 5, 19, global step: 1059, loss 51.863953, acc 0.180000 current count 9
+Epoch 5, 20, global step: 1060, loss 48.837669, acc 0.220000 current count 11
+Epoch 5, 21, global step: 1061, loss 47.929974, acc 0.280000 current count 14
+Epoch 5, 22, global step: 1062, loss 50.655220, acc 0.180000 current count 9
+Epoch 5, 23, global step: 1063, loss 50.864784, acc 0.200000 current count 10
+Epoch 5, 24, global step: 1064, loss 51.888531, acc 0.160000 current count 8
+Epoch 5, 25, global step: 1065, loss 49.754345, acc 0.220000 current count 11
+Epoch 5, 26, global step: 1066, loss 48.240707, acc 0.240000 current count 12
+Epoch 5, 27, global step: 1067, loss 47.607327, acc 0.220000 current count 11
+Epoch 5, 28, global step: 1068, loss 49.364826, acc 0.200000 current count 10
+Epoch 5, 29, global step: 1069, loss 50.188896, acc 0.220000 current count 11
+Epoch 5, 30, global step: 1070, loss 50.767235, acc 0.240000 current count 12
+Epoch 5, 31, global step: 1071, loss 48.536572, acc 0.220000 current count 11
+Epoch 5, 32, global step: 1072, loss 47.939632, acc 0.280000 current count 14
+Epoch 5, 33, global step: 1073, loss 51.961983, acc 0.100000 current count 5
+Epoch 5, 34, global step: 1074, loss 50.937527, acc 0.280000 current count 14
+Epoch 5, 35, global step: 1075, loss 51.806591, acc 0.160000 current count 8
+Epoch 5, 36, global step: 1076, loss 47.612087, acc 0.300000 current count 15
+Epoch 5, 37, global step: 1077, loss 50.531376, acc 0.160000 current count 8
+Epoch 5, 38, global step: 1078, loss 50.549274, acc 0.200000 current count 10
+Epoch 5, 39, global step: 1079, loss 49.853256, acc 0.200000 current count 10
+Epoch 5, 40, global step: 1080, loss 51.418427, acc 0.220000 current count 11
+Epoch 5, 41, global step: 1081, loss 50.731361, acc 0.220000 current count 11
+Epoch 5, 42, global step: 1082, loss 49.208366, acc 0.180000 current count 9
+Epoch 5, 43, global step: 1083, loss 49.422295, acc 0.220000 current count 11
+Epoch 5, 44, global step: 1084, loss 49.902615, acc 0.240000 current count 12
+Epoch 5, 45, global step: 1085, loss 49.017796, acc 0.220000 current count 11
+Epoch 5, 46, global step: 1086, loss 50.700150, acc 0.220000 current count 11
+Epoch 5, 47, global step: 1087, loss 49.788471, acc 0.220000 current count 11
+Epoch 5, 48, global step: 1088, loss 50.357391, acc 0.140000 current count 7
+Epoch 5, 49, global step: 1089, loss 48.358662, acc 0.300000 current count 15
+Epoch 5, 50, global step: 1090, loss 48.561760, acc 0.240000 current count 12
+Epoch 5, 51, global step: 1091, loss 52.298035, acc 0.160000 current count 8
+Epoch 5, 52, global step: 1092, loss 50.152782, acc 0.200000 current count 10
+Epoch 5, 53, global step: 1093, loss 49.328056, acc 0.180000 current count 9
+Epoch 5, 54, global step: 1094, loss 50.092590, acc 0.220000 current count 11
+Epoch 5, 55, global step: 1095, loss 50.083328, acc 0.200000 current count 10
+Epoch 5, 56, global step: 1096, loss 49.514793, acc 0.180000 current count 9
+Epoch 5, 57, global step: 1097, loss 48.985233, acc 0.220000 current count 11
+Epoch 5, 58, global step: 1098, loss 49.407322, acc 0.200000 current count 10
+Epoch 5, 59, global step: 1099, loss 49.549797, acc 0.160000 current count 8
+Epoch 5, 60, global step: 1100, loss 51.156792, acc 0.220000 current count 11
+Eval 5, 60, global step:1100, acc 0.202000 current count 101, all count 500
+Epoch 5, 61, global step: 1101, loss 50.262474, acc 0.260000 current count 13
+Epoch 5, 62, global step: 1102, loss 49.697151, acc 0.180000 current count 9
+Epoch 5, 63, global step: 1103, loss 49.724880, acc 0.220000 current count 11
+Epoch 5, 64, global step: 1104, loss 48.300438, acc 0.260000 current count 13
+Epoch 5, 65, global step: 1105, loss 51.148506, acc 0.220000 current count 11
+Epoch 5, 66, global step: 1106, loss 48.445976, acc 0.320000 current count 16
+Epoch 5, 67, global step: 1107, loss 50.782173, acc 0.100000 current count 5
+Epoch 5, 68, global step: 1108, loss 51.514774, acc 0.140000 current count 7
+Epoch 5, 69, global step: 1109, loss 49.567471, acc 0.320000 current count 16
+Epoch 5, 70, global step: 1110, loss 48.961662, acc 0.260000 current count 13
+Epoch 5, 71, global step: 1111, loss 48.656113, acc 0.280000 current count 14
+Epoch 5, 72, global step: 1112, loss 49.552147, acc 0.220000 current count 11
+Epoch 5, 73, global step: 1113, loss 51.757347, acc 0.120000 current count 6
+Epoch 5, 74, global step: 1114, loss 50.002460, acc 0.240000 current count 12
+Epoch 5, 75, global step: 1115, loss 52.058357, acc 0.160000 current count 8
+Epoch 5, 76, global step: 1116, loss 47.479763, acc 0.240000 current count 12
+Epoch 5, 77, global step: 1117, loss 48.866131, acc 0.300000 current count 15
+Epoch 5, 78, global step: 1118, loss 51.386589, acc 0.140000 current count 7
+Epoch 5, 79, global step: 1119, loss 50.230938, acc 0.200000 current count 10
+Epoch 5, 80, global step: 1120, loss 49.824348, acc 0.160000 current count 8
+Epoch 5, 81, global step: 1121, loss 48.515892, acc 0.280000 current count 14
+Epoch 5, 82, global step: 1122, loss 47.506607, acc 0.280000 current count 14
+Epoch 5, 83, global step: 1123, loss 51.802261, acc 0.140000 current count 7
+Epoch 5, 84, global step: 1124, loss 49.714642, acc 0.240000 current count 12
+Epoch 5, 85, global step: 1125, loss 50.645142, acc 0.260000 current count 13
+Epoch 5, 86, global step: 1126, loss 47.697346, acc 0.240000 current count 12
+Epoch 5, 87, global step: 1127, loss 48.980183, acc 0.240000 current count 12
+Epoch 5, 88, global step: 1128, loss 50.782539, acc 0.220000 current count 11
+Epoch 5, 89, global step: 1129, loss 49.529057, acc 0.260000 current count 13
+Epoch 5, 90, global step: 1130, loss 47.235882, acc 0.300000 current count 15
+Epoch 5, 91, global step: 1131, loss 50.285248, acc 0.200000 current count 10
+Epoch 5, 92, global step: 1132, loss 50.049763, acc 0.240000 current count 12
+Epoch 5, 93, global step: 1133, loss 47.130363, acc 0.320000 current count 16
+Epoch 5, 94, global step: 1134, loss 49.265488, acc 0.200000 current count 10
+Epoch 5, 95, global step: 1135, loss 51.664131, acc 0.120000 current count 6
+Epoch 5, 96, global step: 1136, loss 50.608315, acc 0.220000 current count 11
+Epoch 5, 97, global step: 1137, loss 46.402100, acc 0.280000 current count 14
+Epoch 5, 98, global step: 1138, loss 47.513638, acc 0.280000 current count 14
+Epoch 5, 99, global step: 1139, loss 50.631618, acc 0.180000 current count 9
+Epoch 5, 100, global step: 1140, loss 52.072212, acc 0.100000 current count 5
+Epoch 5, 101, global step: 1141, loss 48.308178, acc 0.220000 current count 11
+Epoch 5, 102, global step: 1142, loss 50.598705, acc 0.220000 current count 11
+Epoch 5, 103, global step: 1143, loss 50.223808, acc 0.160000 current count 8
+Epoch 5, 104, global step: 1144, loss 46.603031, acc 0.420000 current count 21
+Epoch 5, 105, global step: 1145, loss 47.178436, acc 0.220000 current count 11
+Epoch 5, 106, global step: 1146, loss 48.728786, acc 0.340000 current count 17
+Epoch 5, 107, global step: 1147, loss 48.750854, acc 0.200000 current count 10
+Epoch 5, 108, global step: 1148, loss 49.368240, acc 0.220000 current count 11
+Epoch 5, 109, global step: 1149, loss 50.144138, acc 0.180000 current count 9
+Epoch 5, 110, global step: 1150, loss 49.499832, acc 0.260000 current count 13
+Eval 5, 110, global step:1150, acc 0.224000 current count 112, all count 500
+Epoch 5, 111, global step: 1151, loss 49.311428, acc 0.220000 current count 11
+Epoch 5, 112, global step: 1152, loss 45.647480, acc 0.400000 current count 20
+Epoch 5, 113, global step: 1153, loss 48.286156, acc 0.200000 current count 10
+Epoch 5, 114, global step: 1154, loss 52.011868, acc 0.180000 current count 9
+Epoch 5, 115, global step: 1155, loss 49.632549, acc 0.240000 current count 12
+Epoch 5, 116, global step: 1156, loss 44.589878, acc 0.360000 current count 18
+Epoch 5, 117, global step: 1157, loss 47.169147, acc 0.280000 current count 14
+Epoch 5, 118, global step: 1158, loss 49.318714, acc 0.240000 current count 12
+Epoch 5, 119, global step: 1159, loss 49.009575, acc 0.180000 current count 9
+Epoch 5, 120, global step: 1160, loss 48.128960, acc 0.260000 current count 13
+Epoch 5, 121, global step: 1161, loss 51.202988, acc 0.220000 current count 11
+Epoch 5, 122, global step: 1162, loss 47.979099, acc 0.280000 current count 14
+Epoch 5, 123, global step: 1163, loss 47.377308, acc 0.260000 current count 13
+Epoch 5, 124, global step: 1164, loss 49.076023, acc 0.240000 current count 12
+Epoch 5, 125, global step: 1165, loss 49.257195, acc 0.240000 current count 12
+Epoch 5, 126, global step: 1166, loss 48.858746, acc 0.260000 current count 13
+Epoch 5, 127, global step: 1167, loss 52.030155, acc 0.180000 current count 9
+Epoch 5, 128, global step: 1168, loss 48.779053, acc 0.260000 current count 13
+Epoch 5, 129, global step: 1169, loss 47.808437, acc 0.320000 current count 16
+Epoch 5, 130, global step: 1170, loss 53.305702, acc 0.140000 current count 7
+Epoch 5, 131, global step: 1171, loss 48.724495, acc 0.300000 current count 15
+Epoch 5, 132, global step: 1172, loss 49.304642, acc 0.240000 current count 12
+Epoch 5, 133, global step: 1173, loss 48.618511, acc 0.320000 current count 16
+Epoch 5, 134, global step: 1174, loss 50.482201, acc 0.200000 current count 10
+Epoch 5, 135, global step: 1175, loss 49.172520, acc 0.240000 current count 12
+Epoch 5, 136, global step: 1176, loss 50.734856, acc 0.200000 current count 10
+Epoch 5, 137, global step: 1177, loss 48.341805, acc 0.220000 current count 11
+Epoch 5, 138, global step: 1178, loss 51.540878, acc 0.120000 current count 6
+Epoch 5, 139, global step: 1179, loss 49.676914, acc 0.240000 current count 12
+Epoch 5, 140, global step: 1180, loss 50.623890, acc 0.180000 current count 9
+Epoch 5, 141, global step: 1181, loss 49.955780, acc 0.160000 current count 8
+Epoch 5, 142, global step: 1182, loss 51.190575, acc 0.100000 current count 5
+Epoch 5, 143, global step: 1183, loss 50.725437, acc 0.240000 current count 12
+Epoch 5, 144, global step: 1184, loss 47.914886, acc 0.280000 current count 14
+Epoch 5, 145, global step: 1185, loss 50.666908, acc 0.180000 current count 9
+Epoch 5, 146, global step: 1186, loss 48.298943, acc 0.260000 current count 13
+Epoch 5, 147, global step: 1187, loss 46.735771, acc 0.320000 current count 16
+Epoch 5, 148, global step: 1188, loss 46.364639, acc 0.280000 current count 14
+Epoch 5, 149, global step: 1189, loss 49.694107, acc 0.240000 current count 12
+Epoch 5, 150, global step: 1190, loss 51.115395, acc 0.240000 current count 12
+Epoch 5, 151, global step: 1191, loss 50.381226, acc 0.220000 current count 11
+Epoch 5, 152, global step: 1192, loss 47.800640, acc 0.300000 current count 15
+Epoch 5, 153, global step: 1193, loss 47.215420, acc 0.340000 current count 17
+Epoch 5, 154, global step: 1194, loss 50.660103, acc 0.120000 current count 6
+Epoch 5, 155, global step: 1195, loss 46.736797, acc 0.360000 current count 18
+Epoch 5, 156, global step: 1196, loss 51.197742, acc 0.220000 current count 11
+Epoch 5, 157, global step: 1197, loss 51.555111, acc 0.180000 current count 9
+Epoch 5, 158, global step: 1198, loss 51.450790, acc 0.100000 current count 5
+Epoch 5, 159, global step: 1199, loss 48.528896, acc 0.220000 current count 11
+Epoch 5, 160, global step: 1200, loss 50.187592, acc 0.240000 current count 12
+Eval 5, 160, global step:1200, acc 0.232000 current count 116, all count 500
+Epoch 5, 161, global step: 1201, loss 50.640503, acc 0.160000 current count 8
+Epoch 5, 162, global step: 1202, loss 48.380302, acc 0.300000 current count 15
+Epoch 5, 163, global step: 1203, loss 50.549953, acc 0.180000 current count 9
+Epoch 5, 164, global step: 1204, loss 49.604649, acc 0.320000 current count 16
+Epoch 5, 165, global step: 1205, loss 50.140884, acc 0.220000 current count 11
+Epoch 5, 166, global step: 1206, loss 51.063778, acc 0.200000 current count 10
+Epoch 5, 167, global step: 1207, loss 51.761532, acc 0.220000 current count 11
+Epoch 5, 168, global step: 1208, loss 48.632343, acc 0.280000 current count 14
+Epoch 5, 169, global step: 1209, loss 48.556065, acc 0.260000 current count 13
+Epoch 5, 170, global step: 1210, loss 49.331444, acc 0.260000 current count 13
+Epoch 5, 171, global step: 1211, loss 49.999077, acc 0.220000 current count 11
+Epoch 5, 172, global step: 1212, loss 50.798347, acc 0.160000 current count 8
+Epoch 5, 173, global step: 1213, loss 48.762177, acc 0.260000 current count 13
+Epoch 5, 174, global step: 1214, loss 47.469749, acc 0.320000 current count 16
+Epoch 5, 175, global step: 1215, loss 47.708553, acc 0.280000 current count 14
+Epoch 5, 176, global step: 1216, loss 49.539680, acc 0.280000 current count 14
+Epoch 5, 177, global step: 1217, loss 49.176548, acc 0.180000 current count 9
+Epoch 5, 178, global step: 1218, loss 48.545067, acc 0.180000 current count 9
+Epoch 5, 179, global step: 1219, loss 50.573872, acc 0.260000 current count 13
+Epoch 5, 180, global step: 1220, loss 50.113831, acc 0.220000 current count 11
+Epoch 5, 181, global step: 1221, loss 48.895267, acc 0.340000 current count 17
+Epoch 5, 182, global step: 1222, loss 49.568073, acc 0.220000 current count 11
+Epoch 5, 183, global step: 1223, loss 51.829048, acc 0.220000 current count 11
+Epoch 5, 184, global step: 1224, loss 49.832577, acc 0.320000 current count 16
+Epoch 5, 185, global step: 1225, loss 49.241531, acc 0.180000 current count 9
+Epoch 5, 186, global step: 1226, loss 49.078144, acc 0.220000 current count 11
+Epoch 5, 187, global step: 1227, loss 49.486927, acc 0.240000 current count 12
+Epoch 5, 188, global step: 1228, loss 49.880299, acc 0.180000 current count 9
+Epoch 5, 189, global step: 1229, loss 46.832352, acc 0.380000 current count 19
+Epoch 5, 190, global step: 1230, loss 48.870159, acc 0.220000 current count 11
+Epoch 5, 191, global step: 1231, loss 48.131863, acc 0.240000 current count 12
+Epoch 5, 192, global step: 1232, loss 49.626724, acc 0.240000 current count 12
+Epoch 5, 193, global step: 1233, loss 49.756924, acc 0.200000 current count 10
+Epoch 5, 194, global step: 1234, loss 49.267262, acc 0.240000 current count 12
+Epoch 5, 195, global step: 1235, loss 48.731724, acc 0.240000 current count 12
+Epoch 5, 196, global step: 1236, loss 49.903492, acc 0.140000 current count 7
+Epoch 5, 197, global step: 1237, loss 50.542316, acc 0.160000 current count 8
+Epoch 5, 198, global step: 1238, loss 49.252480, acc 0.260000 current count 13
+Epoch 5, 199, global step: 1239, loss 47.306610, acc 0.340000 current count 17
+Epoch 5, 200, global step: 1240, loss 47.465687, acc 0.320000 current count 16
+Epoch 5, 201, global step: 1241, loss 48.365604, acc 0.340000 current count 17
+Epoch 5, 202, global step: 1242, loss 48.994106, acc 0.240000 current count 12
+Epoch 5, 203, global step: 1243, loss 51.054951, acc 0.160000 current count 8
+Epoch 5, 204, global step: 1244, loss 48.323792, acc 0.200000 current count 10
+Epoch 5, 205, global step: 1245, loss 45.946938, acc 0.280000 current count 14
+Epoch 5, 206, global step: 1246, loss 47.770500, acc 0.300000 current count 15
+Epoch 5, 207, global step: 1247, loss 49.586884, acc 0.180000 current count 9
+Epoch 5, 208, global step: 1248, loss 48.152580, acc 0.300000 current count 15
+Epoch 5, 209, global step: 1249, loss 50.306099, acc 0.240000 current count 12
+Epoch 5, 210, global step: 1250, loss 48.484447, acc 0.260000 current count 13
+Eval 5, 210, global step:1250, acc 0.242000 current count 121, all count 500
+Save model, this step acc: 0.242000, last step acc: 0.236000
+Epoch 5, 211, global step: 1251, loss 47.458534, acc 0.380000 current count 19
+Epoch 5, 212, global step: 1252, loss 47.109035, acc 0.340000 current count 17
+Epoch 5, 213, global step: 1253, loss 49.356712, acc 0.320000 current count 16
+Epoch 5, 214, global step: 1254, loss 49.425964, acc 0.200000 current count 10
+Epoch 5, 215, global step: 1255, loss 51.025398, acc 0.160000 current count 8
+Epoch 5, 216, global step: 1256, loss 52.518196, acc 0.160000 current count 8
+Epoch 5, 217, global step: 1257, loss 51.291790, acc 0.200000 current count 10
+Epoch 5, 218, global step: 1258, loss 51.593594, acc 0.140000 current count 7
+Epoch 5, 219, global step: 1259, loss 49.451488, acc 0.160000 current count 8
+Epoch 5, 220, global step: 1260, loss 48.888695, acc 0.260000 current count 13
+Epoch 5, 221, global step: 1261, loss 51.191811, acc 0.180000 current count 9
+Epoch 5, 222, global step: 1262, loss 46.310764, acc 0.300000 current count 15
+Epoch 5, 223, global step: 1263, loss 49.399677, acc 0.220000 current count 11
+Epoch 5, 224, global step: 1264, loss 49.141430, acc 0.160000 current count 8
+Epoch 5, 225, global step: 1265, loss 50.959724, acc 0.240000 current count 12
+Epoch 5, 226, global step: 1266, loss 50.465443, acc 0.320000 current count 16
+Epoch 5, 227, global step: 1267, loss 50.768597, acc 0.200000 current count 10
+Epoch 5, 228, global step: 1268, loss 49.108418, acc 0.220000 current count 11
+Epoch 5, 229, global step: 1269, loss 47.818169, acc 0.280000 current count 14
+Epoch 5, 230, global step: 1270, loss 48.097820, acc 0.220000 current count 11
+Epoch 5, 231, global step: 1271, loss 48.739662, acc 0.300000 current count 15
+Epoch 5, 232, global step: 1272, loss 50.365772, acc 0.140000 current count 7
+Epoch 5, 233, global step: 1273, loss 49.806293, acc 0.180000 current count 9
+Epoch 5, 234, global step: 1274, loss 48.739544, acc 0.260000 current count 13
+Epoch 5, 235, global step: 1275, loss 47.195087, acc 0.300000 current count 15
+Epoch 5, 236, global step: 1276, loss 50.505360, acc 0.180000 current count 9
+Epoch 5, 237, global step: 1277, loss 49.806332, acc 0.240000 current count 12
+Epoch 5, 238, global step: 1278, loss 50.741959, acc 0.140000 current count 7
+Epoch 5, 239, global step: 1279, loss 47.459511, acc 0.260000 current count 13
+Epoch 5, 240, global step: 1280, loss 49.402946, acc 0.260000 current count 13
+Epoch 5, 241, global step: 1281, loss 49.323803, acc 0.160000 current count 8
+Epoch 5, 242, global step: 1282, loss 48.789078, acc 0.240000 current count 12
+Epoch 5, 243, global step: 1283, loss 46.201366, acc 0.280000 current count 14
+Epoch 5, 244, global step: 1284, loss 50.922657, acc 0.180000 current count 9
+Epoch 5, 245, global step: 1285, loss 50.740921, acc 0.160000 current count 8
+Epoch 5, 246, global step: 1286, loss 50.333740, acc 0.220000 current count 11
+Epoch 5, 247, global step: 1287, loss 51.843388, acc 0.240000 current count 12
+Epoch 5, 248, global step: 1288, loss 48.159119, acc 0.300000 current count 15
+Epoch 5, 249, global step: 1289, loss 49.309597, acc 0.220000 current count 11
+Epoch 5, 250, global step: 1290, loss 48.960865, acc 0.220000 current count 11
+Epoch 5, 251, global step: 1291, loss 46.397766, acc 0.280000 current count 14
+Epoch 5, 252, global step: 1292, loss 48.912048, acc 0.260000 current count 13
+Epoch 5, 253, global step: 1293, loss 49.966988, acc 0.200000 current count 10
+Epoch 5, 254, global step: 1294, loss 49.598530, acc 0.140000 current count 7
+Epoch 5, 255, global step: 1295, loss 49.493061, acc 0.280000 current count 14
+Epoch 5, 256, global step: 1296, loss 49.160393, acc 0.200000 current count 10
+Epoch 5, 257, global step: 1297, loss 49.166748, acc 0.260000 current count 13
+Epoch 5, 258, global step: 1298, loss 48.463257, acc 0.220000 current count 11
+Epoch 5, 259, global step: 1299, loss 48.813953, acc 0.220000 current count 11
+Epoch 5, 260, global step: 1300, loss 46.448311, acc 0.320000 current count 16
+Eval 5, 260, global step:1300, acc 0.226000 current count 113, all count 500
+Epoch 6, 1, global step: 1301, loss 48.423954, acc 0.200000 current count 10
+Epoch 6, 2, global step: 1302, loss 51.853928, acc 0.100000 current count 5
+Epoch 6, 3, global step: 1303, loss 47.307270, acc 0.280000 current count 14
+Epoch 6, 4, global step: 1304, loss 49.681225, acc 0.120000 current count 6
